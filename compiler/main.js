@@ -1,23 +1,31 @@
 
-// var testInput = 'num oiu;'
+// import  Token from './token';
+// import {foo, bar} from '/modules/my-module.js';
 
-// let splitted = testInput.split(" ")
-// // var a = splitted.remove(0)
-// // splitted.splice(0, 1)
+class CompilerMain {
 
-// console.log(splitted)
-
-// switch(splitted[0]){
-
-//     case 'num':{
-
-//     }
-
-//     case 'word':{
-
-//     }
+// constructor(){
 
 // }
+
+split(){
+    let  testInput = 'num oiu;'
+
+    let splitted = testInput.split(" ")
+console.log('check ')
+// Token.Tokenization()
+    
+}
+    // var a = splitted.remove(0)
+    // splitted.splice(0, 1)
+    
+    
+
+};``
+
+
+
+
 
 class a {
    
@@ -29,5 +37,7 @@ constructor(){
         console.log('hello')
     }
 }
-const z = new a();
-z.b();
+const compiler  = new CompilerMain();
+compiler.split(); 
+// const z  = new a();
+// z.b(); 
