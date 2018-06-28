@@ -14,7 +14,10 @@ this.SecondPartStatement = this.SecondPartStatement.bind(this)
    
     tokenization (){
         let inputString = this.props.value
+        console.log(inputString)
         let splitted = inputString.split(" ")
+        console.log(splitted)
+
         let keyWord = splitted[0]
         splitted.splice(0, 1)
 this.checkForKeyWord(keyWord)
