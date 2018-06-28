@@ -45,8 +45,7 @@ class App extends Component {
       if (index != 0) {
         var slicePart = a.slice(0, index)
       }
-      // if(slicePart=='')
-      // slicePart=undefined
+    
 
       return (slicePart)
     });
@@ -69,15 +68,10 @@ class App extends Component {
    });
 console.log(check1)
 console.log(check2)
-    // var arr = map0.filter(function (n) {
-    //   return n != undefined
-    // });
-
-    // console.log(arr)
+   
     const map1 = check2.map((a) => {
       return (a.split(' ').remove(''))
     });
-    // var ab = map1.remove('woo')
     console.log(map1)
 
     var result =  map1.filter(e => e.length);
@@ -86,37 +80,16 @@ console.log(check2)
    
 
 
-    // var myArr = map1.remove([])
-    // var myArr =map1.search([])
-    // var myArr = cleanArray(map1);
-    // console.log(myArr)
-    // var map2 = map1.map((a, index)=>{
-    //   if(a===''){
-    //     a.splice(index-1,1)
-    //     return map1
-    //   }
-    // }
-    // )
-    // console.log('check '+map2)
+    
 
-
-    // map.remove('')
-
-    // console.log(map1[2].remove(''))
-    // console.log(map1)
+   
 
     return ( <div className = "App" >
       < Token value = {
         testInput
       }
       /> {
-        /* <header className="App-header">
-                  <img src={logo} className="App-logo" alt="logo" />
-                  <h1 className="App-title">Welcome to React</h1>
-                </header>
-                <p className="App-intro">
-                  To get started, edit <code>src/App.js</code> and save to reload.
-                </p> */
+     
       } </div>
     );
   }
