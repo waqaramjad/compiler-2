@@ -31,9 +31,11 @@ class App extends Component {
       int a = 6 ; 
       float //b = 7 ;  
 //float sum = a+b; // final 
+//float su////m = a+b; // final 
+//float sum = a+b; // final 
     
-    } ; 
-   
+    } ; //
+   /
    `
 
     let splitted = testInput.split("\n")
