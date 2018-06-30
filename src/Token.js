@@ -14,9 +14,9 @@ this.SecondPartStatement = this.SecondPartStatement.bind(this)
    
     tokenization (){
         let inputString = this.props.value
-        console.log(inputString)
+        // console.log(inputString)
         let splitted = inputString.split(" ")
-        console.log(splitted)
+        // console.log(splitted)
 
         let keyWord = splitted[0]
         splitted.splice(0, 1)
@@ -26,7 +26,7 @@ this.SecondPartStatement(splitted)
 
     checkForKeyWord(keyWord){
         var keyWordArray = []
-        console.log(keyWord)
+        // console.log(keyWord)
           switch(keyWord){
     
         case 'num':{
@@ -42,7 +42,7 @@ this.SecondPartStatement(splitted)
         }
     
     }
-    console.log(keyWordArray)
+    // console.log(keyWordArray)
 
 
 
@@ -50,7 +50,7 @@ this.SecondPartStatement(splitted)
 
     SecondPartStatement(secondData){
         
-        console.log(secondData)
+        // console.log(secondData)
 
 
     }

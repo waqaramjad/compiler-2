@@ -1,7 +1,6 @@
 import React, {
   Component
 } from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import Token from './Token.js'
 
@@ -25,21 +24,19 @@ class App extends Component {
       return this;
     };
 
-    console.log('hy')
     let testInput = `class run { 
     
       int a = 6 ; 
-      float //b = 7 ;  
-//float sum = a+b; // final 
-//float su////m = a+b; // final 
-//float sum = a+b; // final 
+      float b = 7 ;  
+float sum = a + b ; // final 
+//end 
     
     } ; //
-   /
+   
    `
 
     let splitted = testInput.split("\n")
-    console.log(splitted)
+    // console.log(splitted)
     const map0 = splitted.map((a) => {
       var index = a.search('//')
       if (index != 0) {
@@ -50,7 +47,7 @@ class App extends Component {
       return (slicePart)
     });
 
-    console.log(map0)
+    // console.log(map0)
     function cleanArray(actual) {
       var newArray = new Array();
       for (var i = 0; i < actual.length; i++) {
@@ -61,29 +58,20 @@ class App extends Component {
       return newArray;
     }
    var check1 =  cleanArray(map0);
-  //  var array = ['1', ' ', 'c'];
 
   var  check2 = check1.filter(function(str) {
        return /\S/.test(str);
    });
-console.log(check1)
-console.log(check2)
+// console.log(check1)
+// console.log(check2)
    
     const map1 = check2.map((a) => {
       return (a.split(' ').remove(''))
     });
-    console.log(map1)
+    // console.log(map1)
 
     var result =  map1.filter(e => e.length);
     console.log(result);
-
-   
-
-
-    
-
-   
-
     return ( <div className = "App" >
       < Token value = {
         testInput
