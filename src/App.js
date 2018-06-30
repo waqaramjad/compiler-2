@@ -74,7 +74,7 @@ float sum = a + b ; // final
     console.log(result);
     return ( <div className = "App" >
       < Token value = {
-        testInput
+        result
       }
       /> {
      

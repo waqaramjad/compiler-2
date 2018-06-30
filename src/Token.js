@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+
+const keyWord = 1 ;
+const  identifier = 2 ;
+const separator = 3;
+const operator = 4;
+const literal = 5 ; 
 class Token extends Component {
     constructor(props) {
         super(props);
@@ -11,17 +17,34 @@ this.checkForKeyWord = this.checkForKeyWord.bind(this)
 this.SecondPartStatement = this.SecondPartStatement.bind(this)
     }
 
-   
+   componentWillMount(){
+    this.tokenization();
+   }
+
+
     tokenization (){
-        let inputString = this.props.value
-        // console.log(inputString)
-        let splitted = inputString.split(" ")
+        let stringInArrayForm = this.props.value
+        console.log(stringInArrayForm)
+var result = stringInArrayForm.map((line , lineIndex)=>{
+
+   var tokenResultOfEachLine = line.map((lineValue , lineValueIndex)=>{
+console.log(lineValue)
+console.log(lineValueIndex)
+
+   })
+
+})
+
+        
+
+
+        // let splitted = inputString.split(" ")
         // console.log(splitted)
 
-        let keyWord = splitted[0]
-        splitted.splice(0, 1)
-this.checkForKeyWord(keyWord)
-this.SecondPartStatement(splitted)
+        // let keyWord = splitted[0]
+        // splitted.splice(0, 1)
+// this.checkForKeyWord(keyWord)
+// this.SecondPartStatement(splitted)
     }
 
     checkForKeyWord(keyWord){
@@ -56,7 +79,7 @@ this.SecondPartStatement(splitted)
     }
 
     render() {
-      this.tokenization();
+      
         return (
             <div>
                 
