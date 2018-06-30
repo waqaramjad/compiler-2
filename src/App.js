@@ -37,9 +37,9 @@ class App extends Component {
     let testInput = `//class // 
     
       adad// a = 6 ; 
-      nuqta //b = 7 ;  
+         nuqta //b = 7 ;  
 // float sum = a + b ; // final 
-mamala//end 
+//mamala//end 
     tabdeli agar warna 
     //} ; //
    

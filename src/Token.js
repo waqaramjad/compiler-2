@@ -5,7 +5,7 @@ const  identifier = 2 ;
 const separator = 3;
 const operator = 4;
 const literal = 5 ; 
-const FinatArrayOfTokens =[[]] ;
+// const FinatArrayOfTokens =[[]] ;
 
 function Create2DArray(rows) {
     var arr = [];
@@ -58,13 +58,14 @@ this.checkForseparator = this.checkForseparator.bind(this)
 
 
     tokenization (){
-        var arr1 = matrix(5,5,[])
         // console.log(matrix(5,5,[])) 
-        arr1[4][2] = 'hy '
-        console.log(arr1[4][2])
-        // console.log(Create2DArray(5)) 
+        // arr1[4][2] = 'hy '
+        // console.log(arr1[4][2])
         let stringInArrayForm = this.props.value
-        console.log(stringInArrayForm)
+        console.log(stringInArrayForm.length) 
+        var FinatArrayOfTokens = matrix(stringInArrayForm.length,5,[])
+
+        console.log(FinatArrayOfTokens)
 var result = stringInArrayForm.map((line , lineIndex)=>{
 // console.log(lineIndex)
    var tokenResultOfEachLine = line.map((lineValue , lineValueIndex)=>{
@@ -73,7 +74,12 @@ var result = stringInArrayForm.map((line , lineIndex)=>{
        if(resultForWords.value===true){
         console.log(lineIndex)
         console.log(resultForWords.type)
-// FinatArrayOfTokens[lineIndex][resultForWords.type] = lineValue
+        var oldArray = FinatArrayOfTokens[lineIndex][resultForWords.type]
+        var newArray = oldArray.slice();
+        FinatArrayOfTokens[lineIndex][resultForWords.type] = newArray
+        // a.push(lineValue)
+        console.log(newArray.push(lineValue))
+        console.log(newArray)
 // FinatArrayOfTokens[5][5]= lineValueIndex
 console.log('true')
 console.log(resultForWords)
