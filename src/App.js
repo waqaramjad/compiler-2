@@ -24,14 +24,24 @@ class App extends Component {
       return this;
     };
 
-    let testInput = `class run { 
+//     let testInput = `class run { 
     
-      int a = 6 ; 
-      float b = 7 ;  
-float sum = a + b ; // final 
-//end 
+//       adad a = 6 ; 
+//       nuqta b = 7 ;  
+// float sum = a + b ; // final 
+// //end 
     
-    } ; //
+//     } ; //
+   
+//    `
+    let testInput = `//class // 
+    
+      adad// a = 6 ; 
+      nuqta //b = 7 ;  
+// float sum = a + b ; // final 
+mamala//end 
+    tabdeli agar warna 
+    //} ; //
    
    `
 
