@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 const keyWord = 0 ;
-const  identifier = 2 ;
-const separator = 3;
-const operator = 4;
-const literal = 5 ; 
+const  identifier = 1 ;
+const separator = 2;
+const operator = 3;
+const literal = 4 ; 
 // const FinatArrayOfTokens =[[]] ;
 
 function Create2DArray(rows) {
@@ -49,7 +49,7 @@ class Token extends Component {
         }
 this.checkForKeyWord = this.checkForKeyWord.bind(this)
 this.SecondPartStatement = this.SecondPartStatement.bind(this)
-this.checkForseparator = this.checkForseparator.bind(this)
+this.checkForSeparator = this.checkForSeparator.bind(this)
     }
 
    componentWillMount(){
@@ -70,15 +70,17 @@ var result = stringInArrayForm.map((line , lineIndex)=>{
 // console.log(lineIndex)
    var tokenResultOfEachLine = line.map((lineValue , lineValueIndex)=>{
        // console.log(lineValueIndex)
+       var resultForWords;
        var resultForWords = this.checkForKeyWord(lineValue)
+    //    console.log(resultForWords1)
        if(resultForWords.value===true){
-        console.log(lineIndex)
-        console.log(resultForWords.type)
+        // console.log(lineIndex)
+        // console.log(resultForWords.type)
         var oldArray = FinatArrayOfTokens[lineIndex][resultForWords.type]
         var newArray = oldArray.slice();
+        newArray.push(lineValue)
         FinatArrayOfTokens[lineIndex][resultForWords.type] = newArray
-        // a.push(lineValue)
-        console.log(newArray.push(lineValue))
+        
         console.log(newArray)
 // FinatArrayOfTokens[5][5]= lineValueIndex
 console.log('true')
@@ -92,8 +94,8 @@ else if(resultForWords.value==false){
     console.log(lineValue)
     // FinatArrayOfTokens[lineIndex][resultForWords.type] = lineValueIndex
 }
-// console.log(resultForWords)
-// console.log(FinatArrayOfTokens)
+console.log(resultForWords)
+console.log(FinatArrayOfTokens)
 
    })
 
@@ -113,24 +115,22 @@ if(mykeyWord=='adad'|mykeyWord=='nuqta'|mykeyWord=='lafz'|mykeyWord=='line'|myke
     return({ value: true , type : keyWord } )
 }      
 else{
-    return({value: false , type : keyWord})
+    return(this.checkForSeparator())
 }
 
-// console.log('checkForKeyWord')
 
-// this.checkForseparator()
 }
 
-checkForseparator(){
+checkForSeparator(){
     console.log('checkForseparator')
-
+return(this.SecondPartStatement('second part'))
     }
     
     SecondPartStatement(secondData){
         
-        // console.log(secondData)
+        console.log(secondData)
 
-
+return 'secondData return'
     }
 
     render() {
