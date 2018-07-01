@@ -45,8 +45,9 @@ class Token extends Component {
             password: ''
         }
         this.checkForKeyWord = this.checkForKeyWord.bind(this)
-        this.SecondPartStatement = this.SecondPartStatement.bind(this)
+        // this.SecondPartStatement = this.SecondPartStatement.bind(this)
         this.checkForSeparator = this.checkForSeparator.bind(this)
+        this.checkForOperator = this.checkForOperator.bind(this)
     }
 
     componentWillMount() {
@@ -56,6 +57,7 @@ class Token extends Component {
 
     tokenization() {
         let stringInArrayForm = this.props.value
+        // console.log(stringInArrayForm)
         var FinatArrayOfTokens = matrix(stringInArrayForm.length, 5, [])
 
         var result = stringInArrayForm.map((line, lineIndex) => {
@@ -67,14 +69,14 @@ class Token extends Component {
                     newArray.push(lineValue)
                     FinatArrayOfTokens[lineIndex][resultForWords.type] = newArray
 
-                    console.log(FinatArrayOfTokens)
                 } else if (resultForWords.value == false) {
                     alert(lineValue + ' is not  a word at line no ' + lineIndex)
                 }
-
+                
             })
-
+            
         })
+        console.log(FinatArrayOfTokens)
 
 
 
@@ -91,26 +93,49 @@ class Token extends Component {
                 type: keyWord
             })
         } else {
-            return (this.checkForSeparator())
+            return (this.checkForSeparator(mykeyWord))
         }
 
 
     }
 
-    checkForSeparator() {
-        console.log('checkForseparator')
-        return (this.SecondPartStatement('second part'))
+    checkForSeparator(mySeparator) {
+        if(mySeparator=='{'|mySeparator=='}'|mySeparator=='('|mySeparator==')'|mySeparator==';'|mySeparator==':'|mySeparator=='.'|mySeparator=='['|mySeparator==']')
+       {
+        return ({
+            value: true,
+            type: separator
+        })   
+       }
+       else{
+
+           return (this.checkForOperator(mySeparator)  )
+       }
     }
 
+    checkForOperator(myOperator){
+
+        if(myOperator=='*'|myOperator=='+'|myOperator=='/'|myOperator=='-'|myOperator=='<'|myOperator=='>'|myOperator=='<='|myOperator=='>='|myOperator=='&'|myOperator=='^'|myOperator=='!'|myOperator=='&&'|myOperator=='||'|myOperator=='='|myOperator=='+='|myOperator=='-='|myOperator=='*='|myOperator=='/='|myOperator=='%='|myOperator=='&='|myOperator=='&='|myOperator=='<<='|myOperator=='>>='|myOperator=='>>>='){
+            return ({
+                value: true,
+                type: operator
+            }) 
+        }
+        else{
+
+            return ({
+                value: false,
+                type: separator
+            }) 
+        }
+    }
 
 
     render() {
 
-        return ( <
-            div >
+        return ( <div>
 
-            <
-            /div>
+            </div>
         )
     }
 }
@@ -119,32 +144,3 @@ class Token extends Component {
 
 export default Token;
 
-
-// class Token {
-//     // constructor(this){
-
-//     // }
-
-//     Tokenization(){
-
-//         console.log('hello')
-
-//         // switch(splitted[0]){
-
-//         //     case 'num':{
-
-//         //     }
-
-//         //     case 'word':{
-
-//         //     }
-
-//         // }
-
-//     }
-
-
-
-//     }
-
-//     export default Token ;

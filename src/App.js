@@ -37,30 +37,46 @@ class App extends Component {
     let testInput = `//class // 
     
       adad// a = 6 ; 
-      nuqta //b = 7 ;  
-// float sum = a + b ; // final 
-mamla//end 
+      ; [ ] nuqta //b = 7 ;  
+
+mamla } .  
     tabdeli agar warna 
-    //} ; //
+  
+  } ; + - *  
+   /
+   >=
+
    
+    
+  [ ] { }   
+    ( )
+
+    ) ( ) . 
+    .
+
    `
 
     let splitted = testInput.split("\n")
+
     // console.log(splitted)
     const map0 = splitted.map((a) => {
       var index = a.search('//')
-      if (index != 0) {
+      // console.log(index+'foot')
+      if (index != 0&& index!=-1) {
         var slicePart = a.slice(0, index)
       }
+      else if(index==-1){
+        var slicePart = a ;
+      } 
     
-
       return (slicePart)
     });
+    // console.log(map0)
 
     // console.log(map0)
     function cleanArray(actual) {
       var newArray = new Array();
-      for (var i = 0; i < actual.length; i++) {
+      for (var i = 0; i < actual.length; i++)  {
         if (actual[i]) {
           newArray.push(actual[i]);
         }
@@ -81,7 +97,7 @@ mamla//end
     // console.log(map1)
 
     var result =  map1.filter(e => e.length);
-    console.log(result);
+    // console.log(result);
     return ( <div className = "App" >
       < Token value = {
         result
