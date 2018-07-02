@@ -48,6 +48,7 @@ class Token extends Component {
         // this.SecondPartStatement = this.SecondPartStatement.bind(this)
         this.checkForSeparator = this.checkForSeparator.bind(this)
         this.checkForOperator = this.checkForOperator.bind(this)
+        this.checkForValuesAndIdentifier = this.checkForValuesAndIdentifier.bind(this)
     }
 
     componentWillMount() {
@@ -123,13 +124,70 @@ class Token extends Component {
         }
         else{
 
-            return ({
-                value: false,
-                type: separator
-            }) 
+            return (
+                 (this.checkForValuesAndIdentifier(myOperator)  ))
+
+            
         }
     }
 
+
+checkForValuesAndIdentifier(myValue){
+
+    var regForFloat = new RegExp('^[0-9]*[.][0-9]+$');
+    var regForInt = new RegExp('^[0-9]+$');
+    var regForIdentifier = new RegExp('^[_$a-zA-Z][_$a-zA-Z0-9]*$');
+    var testResultForInt = regForInt.test(myValue)
+    var testResultForFloat = regForFloat.test(myValue)
+    var mykeyWord = regForIdentifier.test(myValue)
+    // [a-zA-Z_$][a-zA-Zd_$]*\\.)*[a-zA-Z_$][a-zA-Z\\d_$]*
+    // [a-zA-Z_$][a-zA-Z\\d_$]*\\.)*[a-zA-Z_$][a-zA-Z\\d_$]*
+    // var regForIdentifier = new RegExp('[a-zA-Z_$][a-zA-Z\d_$]*\.)*[a-zA-Z_$][a-zA-Z\d_$]*');
+    // console.log(testResultForIdentifier)
+    if(testResultForFloat== true){
+        return ({
+            value: true,
+            type: literal
+        }) 
+    }
+   
+    else if(mykeyWord==true){
+        if (mykeyWord == 'adad' | mykeyWord == 'nuqta' | mykeyWord == 'lafz' | mykeyWord == 'line' | mykeyWord == 'mamla' | mykeyWord == 'tabdeli' | mykeyWord == 'agar' | mykeyWord == 'warna' | mykeyWord == 'warnaTo' | mykeyWord == 'roko' | mykeyWord == 'loop' | mykeyWord == 'wloop' | mykeyWord == 'dloop')
+{
+    return  ({
+        value: false
+        
+    }) 
+        
+    
+}
+else{
+    console.log('true')
+    return ({
+        value: true,
+        type: identifier
+    }) 
+}
+       
+
+}
+        else if(testResultForInt==true){
+            console.log('true INt ')
+
+            return ({
+                value: true,
+                type: literal
+            }) 
+
+    }
+    else{
+        return ({
+            value: false,
+            type: literal
+        }) 
+    }
+   
+}
 
     render() {
 

@@ -34,13 +34,19 @@ class App extends Component {
 //     } ; //
    
 //    `
-    let testInput = `//class // 
-    
+    let testInput = `class  
+    mamla adad  
+    984658345 948758.3453 ugdbfogod
+    mamla// 65465 65454.651 foo _foo 
+    adad a = 4545 ; 
       adad// a = 6 ; 
       ; [ ] nuqta //b = 7 ;  
-
+    _ososi $ $osdno  
+  = 9847.34534
+  
 mamla } .  
     tabdeli agar warna 
+    bisbdb siufshd _jjehe7 //9bwb
   
   } ; + - *  
    /
