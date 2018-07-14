@@ -34,10 +34,7 @@ class App extends Component {
 //     } ; //
    
 //    `
-    let testInput = `class  
-    mamla adad  
-    984658345 948758.3453 ugdbfogod
-    mamla// 65465 65454.651 foo _foo 
+    let testInput = `  
     adad a = 4545 ; 
       adad// a = 6 ; 
       ; [ ] nuqta //b = 7 ;  

@@ -44,8 +44,8 @@ class Token extends Component {
             email: '',
             password: ''
         }
+        
         this.checkForKeyWord = this.checkForKeyWord.bind(this)
-        // this.SecondPartStatement = this.SecondPartStatement.bind(this)
         this.checkForSeparator = this.checkForSeparator.bind(this)
         this.checkForOperator = this.checkForOperator.bind(this)
         this.checkForValuesAndIdentifier = this.checkForValuesAndIdentifier.bind(this)
@@ -140,10 +140,6 @@ checkForValuesAndIdentifier(myValue){
     var testResultForInt = regForInt.test(myValue)
     var testResultForFloat = regForFloat.test(myValue)
     var mykeyWord = regForIdentifier.test(myValue)
-    // [a-zA-Z_$][a-zA-Zd_$]*\\.)*[a-zA-Z_$][a-zA-Z\\d_$]*
-    // [a-zA-Z_$][a-zA-Z\\d_$]*\\.)*[a-zA-Z_$][a-zA-Z\\d_$]*
-    // var regForIdentifier = new RegExp('[a-zA-Z_$][a-zA-Z\d_$]*\.)*[a-zA-Z_$][a-zA-Z\d_$]*');
-    // console.log(testResultForIdentifier)
     if(testResultForFloat== true){
         return ({
             value: true,
