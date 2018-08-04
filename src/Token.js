@@ -45,6 +45,8 @@ class Token extends Component {
             password: ''
         }
         
+
+
         this.checkForKeyWord = this.checkForKeyWord.bind(this)
         this.checkForSeparator = this.checkForSeparator.bind(this)
         this.checkForOperator = this.checkForOperator.bind(this)
@@ -57,6 +59,7 @@ class Token extends Component {
 
 
     tokenization() {
+        
         let stringInArrayForm = this.props.value
         // console.log(stringInArrayForm)
         var FinatArrayOfTokens = matrix(stringInArrayForm.length, 5, [])
