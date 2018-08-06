@@ -2,6 +2,7 @@ import React, {
     Component
 } from 'react';
 
+import Syntax from './syntax'
 const keyWord = 0;
 const identifier = 1;
 const separator = 2;
@@ -18,6 +19,8 @@ function Create2DArray(rows) {
     return arr;
 }
 
+let myObjectForSyntax;
+
 function matrix(rows, cols, defaultValue) {
 
     var arr = [];
@@ -26,11 +29,11 @@ function matrix(rows, cols, defaultValue) {
 
         arr.push([]);
 
-        arr[i].push(new Array(cols));
-
-        for (var j = 0; j < cols; j++) {
-            arr[i][j] = defaultValue;
-        }
+        // arr[i].push(new Array(cols));
+// 
+        // for (var j = 0; j < cols; j++) {
+        //     arr[i][j] = defaultValue;
+        // }
     }
 
     return arr;
@@ -42,7 +45,8 @@ class Token extends Component {
 
         this.state = {
             email: '',
-            password: ''
+            password: '', 
+            
         }
         
 
@@ -62,16 +66,19 @@ class Token extends Component {
         
         let stringInArrayForm = this.props.value
         // console.log(stringInArrayForm)
-        var FinatArrayOfTokens = matrix(stringInArrayForm.length, 5, [])
-
+        var FinatArrayOfTokens = matrix(stringInArrayForm.length)
+        console.log(FinatArrayOfTokens)
+        // var FinatArrayOfTokens = [[]]
+console.log(FinatArrayOfTokens)
         var result = stringInArrayForm.map((line, lineIndex) => {
             var tokenResultOfEachLine = line.map((lineValue, lineValueIndex) => {
                 var resultForWords = this.checkForKeyWord(lineValue)
                 if (resultForWords.value === true) {
-                    var oldArray = FinatArrayOfTokens[lineIndex][resultForWords.type]
+                    var oldArray = FinatArrayOfTokens[lineIndex]
                     var newArray = oldArray.slice();
-                    newArray.push(lineValue)
-                    FinatArrayOfTokens[lineIndex][resultForWords.type] = newArray
+                    // newArray.push(lineValue)
+                    newArray.push({value:lineValue , type : resultForWords.type })
+                    FinatArrayOfTokens[lineIndex] = newArray
 
                 } else if (resultForWords.value == false) {
                     alert(lineValue + ' is not  a word at line no ' + lineIndex)
@@ -80,7 +87,12 @@ class Token extends Component {
             })
             
         })
+        myObjectForSyntax = FinatArrayOfTokens
         console.log(FinatArrayOfTokens)
+        this.setState({
+            Array : FinatArrayOfTokens
+        })
+        console.log(this.state.Array)
 
 
 
@@ -94,7 +106,7 @@ class Token extends Component {
         {
             return ({
                 value: true,
-                type: keyWord
+                type: 'keyWord'
             })
         } else {
             return (this.checkForSeparator(mykeyWord))
@@ -108,7 +120,7 @@ class Token extends Component {
        {
         return ({
             value: true,
-            type: separator
+            type: 'separator'
         })   
        }
        else{
@@ -122,7 +134,7 @@ class Token extends Component {
         if(myOperator=='*'|myOperator=='+'|myOperator=='/'|myOperator=='-'|myOperator=='<'|myOperator=='>'|myOperator=='<='|myOperator=='>='|myOperator=='&'|myOperator=='^'|myOperator=='!'|myOperator=='&&'|myOperator=='||'|myOperator=='='|myOperator=='+='|myOperator=='-='|myOperator=='*='|myOperator=='/='|myOperator=='%='|myOperator=='&='|myOperator=='&='|myOperator=='<<='|myOperator=='>>='|myOperator=='>>>='){
             return ({
                 value: true,
-                type: operator
+                type: 'operator'
             }) 
         }
         else{
@@ -146,7 +158,7 @@ checkForValuesAndIdentifier(myValue){
     if(testResultForFloat== true){
         return ({
             value: true,
-            type: literal
+            type: 'literal'
         }) 
     }
    
@@ -164,7 +176,7 @@ else{
     console.log('true')
     return ({
         value: true,
-        type: identifier
+        type: 'identifier'
     }) 
 }
        
@@ -175,23 +187,23 @@ else{
 
             return ({
                 value: true,
-                type: literal
+                type: 'literal'
             }) 
 
     }
     else{
         return ({
             value: false,
-            type: literal
+            type: 'literal'
         }) 
     }
    
 }
 
     render() {
-
+console.log(myObjectForSyntax)
         return ( <div>
-
+             <Syntax token={myObjectForSyntax}/>
             </div>
         )
     }

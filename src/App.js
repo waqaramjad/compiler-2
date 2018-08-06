@@ -44,7 +44,7 @@ class App extends Component {
 mamla } .  
     tabdeli agar warna 
     bisbdb siufshd _jjehe7 //9bwb
-  
+    tabdeli adad a 6545 / + ; 
   } ; + - *  
    /
    >=
@@ -100,7 +100,7 @@ mamla } .
     // console.log(map1)
 
     var result =  map1.filter(e => e.length);
-    // console.log(result);
+    console.log(result);
     return ( <div className = "App" >
       < Token value = {
         result
