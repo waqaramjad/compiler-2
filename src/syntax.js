@@ -33,7 +33,7 @@ class Syntax extends Component {
             if (curentValue[counterValue].type == 'identifier') {
                 counterValue++
                 // verify++
-                if (curentValue[counterValue].type == 'operator' && curentValue[counterValue].value == '=') {
+                if (curentValue[counterValue].type == 'separator' && curentValue[counterValue].value == '=') {
                     counterValue++
                     // verify++
                     // verify++
@@ -61,7 +61,7 @@ class Syntax extends Component {
 
 
                 } else {
-                    alert('there is an error at line no  ')
+                    alert('there is an error at line no  ==')
                 }
 
             } else {
@@ -77,6 +77,7 @@ class Syntax extends Component {
 
     float(token) {
         var curentValue = token[lineNo]
+        counterValue = 0;
         console.log(curentValue)
         console.log(curentValue[counterValue])
         if (curentValue[counterValue].type == 'keyWord' && curentValue[counterValue].value == 'nuqta') {
@@ -85,7 +86,7 @@ class Syntax extends Component {
             if (curentValue[counterValue].type == 'identifier') {
                 counterValue++
                 // verify++
-                if (curentValue[counterValue].type == 'operator' && curentValue[counterValue].value == '=') {
+                if (curentValue[counterValue].type == 'separator' && curentValue[counterValue].value == '=') {
                     counterValue++
                     // verify++
                     // verify++
@@ -101,6 +102,8 @@ class Syntax extends Component {
                             verify++
                             counterValue = 0;
                             console.log('done float')
+                            this.int(this.state.token)
+
 
 
 
@@ -123,9 +126,48 @@ class Syntax extends Component {
 
         } else {
 
-            this.float(this.state.token)
+            this.conditionStatement(this.state.token)
         }
     }
+
+
+    conditionStatement(token){
+        var curentValue = token[lineNo]
+        counterValue = 0;
+console.log(curentValue)
+
+if(curentValue[counterValue].value == 'agar' && curentValue[counterValue].type == 'keyword' )
+{
+    counterValue++
+    
+            // if( curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator' ){
+
+            //     counterValue++
+            //  var conditionResult =    this.conditionCheck( this.state.token )
+
+
+            // }
+
+
+       
+}
+
+
+    }
+
+    conditionCheck ( token  ) {
+        var curentValue = token[lineNo]
+        if(curentValue[counterValue].type == 'identifier'  ){
+            counterValue++
+            // if( )
+
+        }
+
+
+
+    } 
+
+
     syntax(token) {
 
         console.log(this.state.token)

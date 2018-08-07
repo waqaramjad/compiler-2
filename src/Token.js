@@ -116,7 +116,7 @@ console.log(FinatArrayOfTokens)
     }
 
     checkForSeparator(mySeparator) {
-        if(mySeparator=='{'|mySeparator=='}'|mySeparator=='('|mySeparator==')'|mySeparator==';'|mySeparator==':'|mySeparator=='.'|mySeparator=='['|mySeparator==']')
+        if(mySeparator=='{'|mySeparator=='}'|mySeparator=='('|mySeparator==')'|mySeparator=='='|mySeparator==';'|mySeparator==':'|mySeparator=='.'|mySeparator=='['|mySeparator==']')
        {
         return ({
             value: true,
@@ -131,7 +131,7 @@ console.log(FinatArrayOfTokens)
 
     checkForOperator(myOperator){
 
-        if(myOperator=='*'|myOperator=='+'|myOperator=='/'|myOperator=='-'|myOperator=='<'|myOperator=='>'|myOperator=='<='|myOperator=='>='|myOperator=='&'|myOperator=='^'|myOperator=='!'|myOperator=='&&'|myOperator=='||'|myOperator=='='|myOperator=='+='|myOperator=='-='|myOperator=='*='|myOperator=='/='|myOperator=='%='|myOperator=='&='|myOperator=='&='|myOperator=='<<='|myOperator=='>>='|myOperator=='>>>='){
+        if(myOperator=='*'|myOperator=='+'|myOperator=='/'|myOperator=='-'|myOperator=='<'|myOperator=='>'|myOperator=='<='|myOperator=='>='|myOperator=='&'|myOperator=='^'|myOperator=='!'|myOperator=='&&'|myOperator=='||'|myOperator=='=='|myOperator=='+='|myOperator=='-='|myOperator=='*='|myOperator=='/='|myOperator=='%='|myOperator=='&='|myOperator=='&='|myOperator=='<<='|myOperator=='>>='|myOperator=='>>>='){
             return ({
                 value: true,
                 type: 'operator'
