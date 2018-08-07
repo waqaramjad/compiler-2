@@ -36,6 +36,7 @@ class App extends Component {
 //    `
     let testInput = `  
     adad  a = 4545 ; 
+    nuqta  g = 45450.5 ; 
       adad// a = 6 ; 
       ; [ ] nuqta //b = 7 ;  
     _ososi $ $osdno  
