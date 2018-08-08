@@ -22,11 +22,12 @@ class Syntax extends Component {
 
     int(token) {
 
-
-        console.log('done done ')
+counterValue =0 ; 
+        console.log(token)
+        console.log('line no '+ lineNo)
         var curentValue = token[lineNo]
-        console.log(curentValue)
-        console.log(curentValue[counterValue])
+        // console.log(curentValue)
+        // console.log(curentValue[counterValue])
         if (curentValue[counterValue].type == 'keyWord' && curentValue[counterValue].value == 'adad') {
             counterValue++
             // verify++
@@ -71,11 +72,15 @@ class Syntax extends Component {
 
         } else {
 
-            this.float(this.state.token)
+          var FloatReturn =   this.float(this.state.token)
+          return(FloatReturn)
+        console.log(FloatReturn)
         }
     }
 
     float(token) {
+        console.log(token)
+        console.log('line no float '+ lineNo)
         var curentValue = token[lineNo]
         counterValue = 0;
         console.log(curentValue)
@@ -98,11 +103,24 @@ class Syntax extends Component {
                         console.log('done')
                         if (curentValue[counterValue].type == 'separator' && curentValue[counterValue].value == ';') {
 
+                            // counterValue++
+                            console.log(curentValue.length)
+                            if(curentValue.length == 6 )
+                            {
+                                lineNo++;
+                                verify++
+                                counterValue = 0;
+                                console.log('condition statement ')
+                                return ({myVal : true})
+
+                            }
+ else{
                             lineNo++;
                             verify++
                             counterValue = 0;
                             console.log('done float')
                             this.int(this.state.token)
+                         }
 
 
 
@@ -130,26 +148,55 @@ class Syntax extends Component {
         }
     }
 
-
+/*/********************************************** conditionStatement  **********************************************/
     conditionStatement(token){
+        console.log('line no condition'+ lineNo)
+
         var curentValue = token[lineNo]
         counterValue = 0;
-console.log(curentValue)
+// console.log(curentValue)
+// console.log(lineNo)
+// console.log(curentValue[counterValue])
 
-if(curentValue[counterValue].value == 'agar' && curentValue[counterValue].type == 'keyword' )
+if(curentValue[counterValue].value == 'agar' && curentValue[counterValue].type == 'keyWord' )
 {
     counterValue++
     
-            // if( curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator' ){
+            if( curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator' ){
 
-            //     counterValue++
-            //  var conditionResult =    this.conditionCheck( this.state.token )
+                console.log('inside if in condition')
+                counterValue++
+             var conditionResult =    this.conditionCheck( this.state.token )
+            //  console.log(conditionResult)
+            //  console.log(counterValue)
+            //  console.log(curentValue)
+             if(conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator' )
+             {
+                counterValue++
+                
+                if(curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator' )
+                lineNo++ ;
+                var curentValue = token[lineNo]
+                counterValue=0
 
 
-            // }
+                 console.log('inside' )
+
+                 if( curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta' )
+                    {
+                       var newArrayForChecking =  curentValue.push({check:'true '})
+                        console.log('adad seting ')
+                        console.log(curentValue)
+
+                      var checkForDecleration =   this.int(this.state.token)
+                console.log(checkForDecleration)
+                
+                    }
+
+            }
 
 
-       
+        }
 }
 
 
@@ -159,14 +206,36 @@ if(curentValue[counterValue].value == 'agar' && curentValue[counterValue].type =
         var curentValue = token[lineNo]
         if(curentValue[counterValue].type == 'identifier'  ){
             counterValue++
-            // if( )
+          if( curentValue[counterValue].type == 'operator'  ){
+            counterValue++
+            if( curentValue[counterValue].type == 'identifier' | curentValue[counterValue].type == 'literal'   ){
+                counterValue++
+                console.log('my true ')
+                
+                return(true)
+
+            }
+            else{
+                return (false)
+ 
+            }
+
+        }
+        else{
+            return (false)
 
         }
 
 
-
     } 
 
+    else if(curentValue[counterValue].type == 'keyword' && curentValue[counterValue].value == 'sahi'   ){
+        return(true)
+    }
+    else{
+        return (false)
+    }
+    }
 
   
 

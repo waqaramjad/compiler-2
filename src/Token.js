@@ -65,11 +65,11 @@ class Token extends Component {
     tokenization() {
         
         let stringInArrayForm = this.props.value
-        // console.log(stringInArrayForm)
+        // // console.log(stringInArrayForm)
         var FinatArrayOfTokens = matrix(stringInArrayForm.length)
-        console.log(FinatArrayOfTokens)
+        // console.log(FinatArrayOfTokens)
         // var FinatArrayOfTokens = [[]]
-console.log(FinatArrayOfTokens)
+// console.log(FinatArrayOfTokens)
         var result = stringInArrayForm.map((line, lineIndex) => {
             var tokenResultOfEachLine = line.map((lineValue, lineValueIndex) => {
                 var resultForWords = this.checkForKeyWord(lineValue)
@@ -88,11 +88,11 @@ console.log(FinatArrayOfTokens)
             
         })
         myObjectForSyntax = FinatArrayOfTokens
-        console.log(FinatArrayOfTokens)
+        // console.log(FinatArrayOfTokens)
         this.setState({
             Array : FinatArrayOfTokens
         })
-        console.log(this.state.Array)
+        // console.log(this.state.Array)
 
 
 
@@ -101,7 +101,7 @@ console.log(FinatArrayOfTokens)
     }
 
     checkForKeyWord(mykeyWord) {
-        if (mykeyWord == 'adad' | mykeyWord == 'nuqta' | mykeyWord == 'lafz' | mykeyWord == 'line' | mykeyWord == 'mamla' | mykeyWord == 'tabdeli' | mykeyWord == 'agar' | mykeyWord == 'warna' | mykeyWord == 'warnaTo' | mykeyWord == 'roko' | mykeyWord == 'loop' | mykeyWord == 'wloop' | mykeyWord == 'dloop')
+        if (mykeyWord == 'adad' | mykeyWord == 'nuqta' |mykeyWord == 'sahi' |mykeyWord == 'ghalat' | mykeyWord == 'lafz' | mykeyWord == 'line' | mykeyWord == 'mamla' | mykeyWord == 'tabdeli' | mykeyWord == 'agar' | mykeyWord == 'warna' | mykeyWord == 'warnaTo' | mykeyWord == 'roko' | mykeyWord == 'loop' | mykeyWord == 'wloop' | mykeyWord == 'dloop')
 
         {
             return ({
@@ -173,7 +173,7 @@ checkForValuesAndIdentifier(myValue){
     
 }
 else{
-    console.log('true')
+    // console.log('true')
     return ({
         value: true,
         type: 'identifier'
@@ -183,7 +183,7 @@ else{
 
 }
         else if(testResultForInt==true){
-            console.log('true INt ')
+            // console.log('true INt ')
 
             return ({
                 value: true,
@@ -201,7 +201,7 @@ else{
 }
 
     render() {
-console.log(myObjectForSyntax)
+// console.log(myObjectForSyntax)
         return ( <div>
              <Syntax token={myObjectForSyntax}/>
             </div>
