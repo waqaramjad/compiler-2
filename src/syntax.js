@@ -190,6 +190,24 @@ if(curentValue[counterValue].value == 'agar' && curentValue[counterValue].type =
 
                       var checkForDecleration =   this.int(this.state.token)
                 console.log(checkForDecleration)
+
+                if(checkForDecleration.myVal == true ){
+// lineNo++
+                    counterValue=0
+                    var curentValue = token[lineNo]
+                    console.log('if statement done ')   
+                    console.log(lineNo)   
+                    console.log( token[lineNo])                     
+
+                    if( curentValue[counterValue].value == '}'){
+
+
+                        lineNo++
+console.log('if statement done ')                        
+
+                    }
+
+                }
                 
                     }
 
