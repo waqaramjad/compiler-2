@@ -324,6 +324,13 @@ console.log('inside else '+lineNo+'counter'+counterValue)
 
     }
 
+    doWhileLoop(){
+
+
+
+        
+    }
+
 check(current){
 console.log( current[counterValue])
 if(current[counterValue].value=='{')
