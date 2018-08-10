@@ -40,9 +40,15 @@ class App extends Component {
 
     agar ( a >= v ) {
 
-      nuqta  g = 45450.5 ; 
+      adad  g = 45450 ; 
     }
-      adad// a = 6 ; 
+    warnaTo {
+      adad  g = 45450 ; 
+}
+    warna {
+            adad  g = 45450 ; 
+    }
+     // adad// a = 6 ; 
       ; [ ] nuqta //b = 7 ;  
     _ososi $ $osdno  
   = 9847.34534

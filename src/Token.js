@@ -183,7 +183,6 @@ else{
 
 }
         else if(testResultForInt==true){
-            // console.log('true INt ')
 
             return ({
                 value: true,
@@ -201,7 +200,6 @@ else{
 }
 
     render() {
-// console.log(myObjectForSyntax)
         return ( <div>
              <Syntax token={myObjectForSyntax}/>
             </div>
