@@ -270,10 +270,13 @@ console.log('inside else '+lineNo+'counter'+counterValue)
 
     }
 
+   
+
 
 }
 
         }
+
 
         // warna to 
         else if (curentValue[counterValue].value == 'warnaTo' && curentValue[counterValue].type == 'keyWord') {
@@ -321,15 +324,173 @@ console.log('inside else '+lineNo+'counter'+counterValue)
             }
             
                     }
+                    else {
+
+                        this.doWhileLoop(token)
+                    }
 
     }
 
-    doWhileLoop(){
+    doWhileLoop(token){
+
+// console.log(token)
+
+var curentValue = token[lineNo]
+counterValue = 0;
+console.log(curentValue)
+// console.log(lineNo)
+// console.log(curentValue[counterValue])
+
+if (curentValue[counterValue].value == 'do' && curentValue[counterValue].type == 'keyWord') {
+    counterValue++
+    console.log('2nd phase ')
+if (curentValue[counterValue].value == '{' ) {
+    lineNo++;
+    var curentValue = token[lineNo]
+    counterValue = 0
+
+
+    console.log('inside')
+
+    if (curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta') {
+        var newArrayForChecking = curentValue.push({
+            check: 'true '
+        })
+        console.log('adad seting ')
+        console.log(curentValue)
+
+        var checkForDecleration = this.int(this.state.token)
+        console.log(checkForDecleration)
+
+        if (checkForDecleration.myVal == true) {
+            // lineNo++
+            counterValue = 0
+            var curentValue = token[lineNo]
+            console.log('do while loop  statement done ')
+            console.log(lineNo)
+            console.log(token[lineNo])
+
+            if (curentValue[counterValue].value == '}') {
+
+                counterValue++
+                // lineNo++
+                // counterValue=0
+                console.log('do while  done '+lineNo)
+                // this.int(this.state.token)
+                
+
+                ///*********************** */
+             
+             
+             
+        if (curentValue[counterValue].value == 'wloop' && curentValue[counterValue].type == 'keyWord') {
+            counterValue++
+
+            if (curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator') {
+
+                console.log('inside if in condition')
+                counterValue++
+                var conditionResult = this.conditionCheck(this.state.token)
+
+                if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
+
+                    lineNo++
+                    console.log('do while loop end ')
+                }
+             
+            }
+        }
+             
+             
+             
+             
+                ///*********************** */
+            }
 
 
 
-        
+        }
+
     }
+
+
+}
+
+
+    }
+
+}
+
+
+wLoop(token){
+
+    // console.log(token)
+    
+    var curentValue = token[lineNo]
+    counterValue = 0;
+    console.log('curentValue')
+    if (curentValue[counterValue].value == 'wloop' && curentValue[counterValue].type == 'keyWord') {
+        counterValue++
+
+        if (curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator') {
+
+            console.log('inside wLoop ')
+            counterValue++
+            var conditionResult = this.conditionCheck(this.state.token)
+            //  console.log(conditionResult)
+            //  console.log(counterValue)
+            //  console.log(curentValue)
+            if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
+                counterValue++
+// this.check(curentValue)
+                if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator')
+                    lineNo++;
+                var curentValue = token[lineNo]
+                counterValue = 0
+
+
+                console.log('inside ')
+
+                if (curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta') {
+                    var newArrayForChecking = curentValue.push({
+                        check: 'true '
+                    })
+                    console.log('adad seting ')
+                    console.log(curentValue)
+
+                    var checkForDecleration = this.int(this.state.token)
+                    console.log(checkForDecleration)
+
+                    if (checkForDecleration.myVal == true) {
+                        // lineNo++
+                        counterValue = 0
+                        var curentValue = token[lineNo]
+                        console.log('wloop statement done ')
+                        console.log(lineNo)
+                        console.log(token[lineNo])
+
+                        if (curentValue[counterValue].value == '}') {
+
+
+                            lineNo++
+                            console.log('if statement done '+lineNo)
+                            this.int(this.state.token)
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+
+        }
+    }
+
+
+
+}
 
 check(current){
 console.log( current[counterValue])

@@ -101,7 +101,7 @@ class Token extends Component {
     }
 
     checkForKeyWord(mykeyWord) {
-        if (mykeyWord == 'adad' | mykeyWord == 'nuqta' |mykeyWord == 'sahi' |mykeyWord == 'ghalat' | mykeyWord == 'lafz' | mykeyWord == 'line' | mykeyWord == 'mamla' | mykeyWord == 'tabdeli' | mykeyWord == 'agar' | mykeyWord == 'warna' | mykeyWord == 'warnaTo' | mykeyWord == 'roko' | mykeyWord == 'loop' | mykeyWord == 'wloop' | mykeyWord == 'dloop')
+        if (mykeyWord == 'adad' | mykeyWord == 'nuqta' |mykeyWord == 'sahi' |mykeyWord == 'func' |mykeyWord == 'ghalat' | mykeyWord == 'lafz' | mykeyWord == 'line' | mykeyWord == 'mamla' | mykeyWord == 'tabdeli' | mykeyWord == 'agar' | mykeyWord == 'warna' | mykeyWord == 'warnaTo' | mykeyWord == 'roko' | mykeyWord == 'loop' | mykeyWord == 'wloop' | mykeyWord == 'do')
 
         {
             return ({
@@ -163,7 +163,7 @@ checkForValuesAndIdentifier(myValue){
     }
    
     else if(mykeyWord==true){
-        if (mykeyWord == 'adad' | mykeyWord == 'nuqta' | mykeyWord == 'lafz' | mykeyWord == 'line' | mykeyWord == 'mamla' | mykeyWord == 'tabdeli' | mykeyWord == 'agar' | mykeyWord == 'warna' | mykeyWord == 'warnaTo' | mykeyWord == 'roko' | mykeyWord == 'loop' | mykeyWord == 'wloop' | mykeyWord == 'dloop')
+        if (mykeyWord == 'adad' | mykeyWord == 'nuqta'| mykeyWord == 'func' | mykeyWord == 'lafz' | mykeyWord == 'line' | mykeyWord == 'mamla' | mykeyWord == 'tabdeli' | mykeyWord == 'agar' | mykeyWord == 'warna' | mykeyWord == 'warnaTo' | mykeyWord == 'roko' | mykeyWord == 'loop' | mykeyWord == 'wloop' | mykeyWord == 'do')
 {
     return  ({
         value: false

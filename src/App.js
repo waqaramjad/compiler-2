@@ -48,6 +48,16 @@ class App extends Component {
     warna {
             adad  g = 45450 ; 
     }
+
+    do {
+      adad  g = 45450 ; 
+    } wloop (  a >= v )
+
+    wloop ( a >= f  ) 
+      adad  g = 45450 ; 
+    }
+    
+    wloop ( adad <= 5 )
      // adad// a = 6 ; 
       ; [ ] nuqta //b = 7 ;  
     _ososi $ $osdno  
