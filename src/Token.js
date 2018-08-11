@@ -116,8 +116,8 @@ class Token extends Component {
     }
 
     checkForSeparator(mySeparator) {
-        if(mySeparator=='{'|mySeparator=='}'|mySeparator=='('|mySeparator==')'|mySeparator=='='|mySeparator==';'|mySeparator==':'|mySeparator=='.'|mySeparator=='['|mySeparator==']')
-       {
+        if(mySeparator=='{'|mySeparator=='}'|mySeparator=='('|mySeparator==')'|mySeparator=='='|mySeparator==';'|mySeparator==':'|mySeparator=='.'|mySeparator==','|mySeparator=='['|mySeparator==']')
+       {    
         return ({
             value: true,
             type: 'separator'

@@ -53,30 +53,14 @@ class App extends Component {
       adad  g = 45450 ; 
     } wloop (  a >= v )
 
-    wloop ( a >= f  ) 
+    wloop ( a >= f  ) {
+      adad  g = 45450 ; 
+    }
+    func myfunc ( lahore , pkistam ) {
       adad  g = 45450 ; 
     }
     
-    wloop ( adad <= 5 )
-     // adad// a = 6 ; 
-      ; [ ] nuqta //b = 7 ;  
-    _ososi $ $osdno  
-  = 9847.34534
-  
-mamla } .  
-    tabdeli agar warna 
-    bisbdb siufshd _jjehe7 //9bwb
-    tabdeli adad a 6545 / + ; 
-  } ; + - *  
-   /
-   >=
-
    
-    
-  [ ] { }   
-    ( )
-
-    ) ( ) . 
     .
 
    `

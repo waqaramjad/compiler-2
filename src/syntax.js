@@ -396,6 +396,9 @@ if (curentValue[counterValue].value == '{' ) {
 
                     lineNo++
                     console.log('do while loop end ')
+                    this.int(this.state.token)
+
+        
                 }
              
             }
@@ -415,6 +418,13 @@ if (curentValue[counterValue].value == '{' ) {
 
 
 }
+
+
+    }
+
+    else{
+console.log('else do whie ')
+        this.wLoop(token)
 
 
     }
@@ -442,8 +452,9 @@ wLoop(token){
             //  console.log(curentValue)
             if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
                 counterValue++
+                console.log(curentValue)
 // this.check(curentValue)
-                if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator')
+                if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator'){
                     lineNo++;
                 var curentValue = token[lineNo]
                 counterValue = 0
@@ -484,15 +495,131 @@ wLoop(token){
 
             }
 
-
         }
+        }
+    }
+    else{
+        this.fuctionLogic(curentValue)
+        console.log('inside else ')
     }
 
 
 
 }
 
+//**************************************   Function ***************************** */
+
+fuctionLogic(token){
+
+    var curentValue = token
+    counterValue = 0;
+    console.log(token)
+    if (curentValue[counterValue].value == 'func' && curentValue[counterValue].type == 'keyWord') {
+        counterValue++
+        console.log('round bracket ) ')
+        if (curentValue[counterValue].type == 'identifier') {
+
+            console.log('round bracket ) ')
+            counterValue++
+
+        if (curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator') {
+            console.log('round bracket ) ')
+
+            counterValue++
+            var conditionResult = this.ParameterCheck(curentValue)
+            //  console.log(conditionResult)
+            //  console.log(counterValue)
+            console.log('round bracket ) ')
+            console.log(conditionResult)
+            console.log(curentValue)
+            console.log(curentValue[counterValue].value)
+            if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
+                counterValue++
+                
+                 console.log('round bracket ) ')
+                 if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator'){
+                    lineNo++;
+                var curentValue = token[lineNo]
+                counterValue = 0
+
+
+                console.log('func ')
+
+                if (curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta') {
+                    var newArrayForChecking = curentValue.push({
+                        check: 'true '
+                    })
+                    console.log('func ')
+                    console.log(curentValue)
+
+                    var checkForDecleration = this.int(this.state.token)
+                    console.log(checkForDecleration)
+
+                    if (checkForDecleration.myVal == true) {
+                        // lineNo++
+                        counterValue = 0
+                        var curentValue = token[lineNo]
+                        console.log('mid of function ')
+                        console.log(lineNo)
+                        console.log(token[lineNo])
+
+                        if (curentValue[counterValue].value == '}') {
+
+
+                            lineNo++
+                            console.log('end of function '+lineNo)
+                            this.int(this.state.token)
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            }
+        }
+
+    }
+           
+}
+        
+}
+//************************************************End *********************************** */
+//************************************************Parameter Check  *********************************** */
+
+ParameterCheck(curentValue){
+console.log(curentValue[counterValue])
+console.log(curentValue[counterValue])
+
+    if ( curentValue[counterValue].type == 'identifier') {
+        counterValue++
+            if(curentValue[counterValue].value == ',' && curentValue[counterValue].type =='separator'){
+                counterValue++
+                this.ParameterCheck(curentValue)
+            }
+            
+            else{
+                console.log('else')
+                return true
+                
+            }
+        }
+        else{
+            console.log('else')
+            return true
+
+        }
+
+
+} 
+
+
+
+//************************************************End Parameter Check  *********************************** */
 check(current){
+
 console.log( current[counterValue])
 if(current[counterValue].value=='{')
 {
