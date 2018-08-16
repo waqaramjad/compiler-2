@@ -56,7 +56,7 @@ class App extends Component {
     wloop ( a >= f  ) {
       adad  g = 45450 ; 
     }
-    func myfunc ( lahore , pkistam ) {
+    func myfunc ( lahore  ) {
       adad  g = 45450 ; 
     }
     

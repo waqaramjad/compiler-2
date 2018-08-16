@@ -595,20 +595,21 @@ console.log(curentValue[counterValue])
 
     if ( curentValue[counterValue].type == 'identifier') {
         counterValue++
-            if(curentValue[counterValue].value == ',' && curentValue[counterValue].type =='separator'){
-                counterValue++
-                this.ParameterCheck(curentValue)
-            }
+            // if(curentValue[counterValue].value == ',' && curentValue[counterValue].type =='separator'){
+            //     counterValue++
+            //     this.ParameterCheck(curentValue)
+            // }
             
-            else{
-                console.log('else')
-                return true
+            // else{
+            //     console.log('else')
+            //     return true
                 
-            }
+            // }
+            return true
         }
         else{
             console.log('else')
-            return true
+            return false
 
         }
 
