@@ -499,7 +499,7 @@ wLoop(token){
         }
     }
     else{
-        this.fuctionLogic(curentValue)
+        this.fuctionLogic(token)
         console.log('inside else ')
     }
 
@@ -511,7 +511,9 @@ wLoop(token){
 
 fuctionLogic(token){
 
-    var curentValue = token
+    // var curentValue = token
+    var curentValue = token[lineNo]
+// 
     counterValue = 0;
     console.log(token)
     if (curentValue[counterValue].value == 'func' && curentValue[counterValue].type == 'keyWord') {
@@ -543,7 +545,8 @@ fuctionLogic(token){
                 counterValue = 0
 
 
-                console.log('func ')
+                console.log(token)
+                console.log(counterValue)
 
                 if (curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta') {
                     var newArrayForChecking = curentValue.push({
