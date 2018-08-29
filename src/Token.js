@@ -131,7 +131,7 @@ class Token extends Component {
 
     checkForOperator(myOperator){
 
-        if(myOperator=='*'|myOperator=='+'|myOperator=='/'|myOperator=='-'|myOperator=='<'|myOperator=='>'|myOperator=='<='|myOperator=='>='|myOperator=='&'|myOperator=='^'|myOperator=='!'|myOperator=='&&'|myOperator=='||'|myOperator=='=='|myOperator=='+='|myOperator=='-='|myOperator=='*='|myOperator=='/='|myOperator=='%='|myOperator=='&='|myOperator=='&='|myOperator=='<<='|myOperator=='>>='|myOperator=='>>>='){
+        if(myOperator=='*'|myOperator=='+'|myOperator=='/'|myOperator=='-'|myOperator=='++'|myOperator=='<'|myOperator=='>'|myOperator=='<='|myOperator=='>='|myOperator=='&'|myOperator=='^'|myOperator=='!'|myOperator=='&&'|myOperator=='||'|myOperator=='=='|myOperator=='+='|myOperator=='-='|myOperator=='*='|myOperator=='/='|myOperator=='%='|myOperator=='&='|myOperator=='&='|myOperator=='<<='|myOperator=='>>='|myOperator=='>>>='){
             return ({
                 value: true,
                 type: 'operator'

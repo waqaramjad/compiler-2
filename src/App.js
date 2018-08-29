@@ -59,6 +59,13 @@ class App extends Component {
     func myfunc ( lahore  ) {
       adad  g = 45450 ; 
     }
+
+    loop ( adad a = 5 ; a > 5 ; i ++ ) {
+
+      adad  g = 45450 ; 
+
+      
+    }
     
    
     .
