@@ -29,8 +29,6 @@ class Syntax extends Component {
         console.log(token)
         console.log('line no ' + lineNo)
         var curentValue = token[lineNo]
-        // console.log(curentValue)
-        // console.log(curentValue[counterValue])
         if (curentValue[counterValue].type == 'keyWord' && curentValue[counterValue].value == 'adad') {
             counterValue++
             // verify++
@@ -495,7 +493,7 @@ class Syntax extends Component {
             }
         } else {
             this.fuctionLogic(token)
-            console.log('inside else ')
+            console.log(lineNo)
         }
 
 
@@ -581,8 +579,7 @@ class Syntax extends Component {
 
             }
 
-        }
-        else {
+        } else {
             // this.forLoopLogic(token)
             console.log('function else  ')
         }
@@ -621,9 +618,9 @@ class Syntax extends Component {
 
     //************************************************End Parameter Check  *********************************** */
     //************************************************   start for loop  *********************************** */
-    
-    forLoopLogic(token){
-        
+
+    forLoopLogic(token) {
+
         var curentValue = token[lineNo]
         counterValue = 0;
         console.log('curentValue')
@@ -635,7 +632,7 @@ class Syntax extends Component {
                 console.log('inside wLoop ')
                 counterValue++
                 var conditionResult = this.conditionCheckForLoop(this.state.token)
-                 console.log(conditionResult)
+                console.log(conditionResult)
                 //  console.log(counterValue)
                 //  console.log(curentValue)
                 if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
@@ -689,71 +686,70 @@ class Syntax extends Component {
             this.fuctionLogic(token)
             console.log('inside else ')
         }
-        
-        
-        
+
+
+
     }
     //************************************************   END for loop  *********************************** */
     //************************************************   condition check  for loop  *********************************** */
-   
-    conditionCheckForLoop(token){
+
+    conditionCheckForLoop(token) {
         var curentValue = token[lineNo]
         console.log(curentValue)
-        console.log(curentValue[counterValue].type )
+        console.log(curentValue[counterValue].type)
         if (curentValue[counterValue].type == 'keyWord') {
             console.log('w loop condition ')
             counterValue++
-        if (curentValue[counterValue].type == 'identifier') {
-            console.log('w loop condition ')
-            counterValue++
-            if (curentValue[counterValue].value == '=') {
+            if (curentValue[counterValue].type == 'identifier') {
+                console.log('w loop condition ')
                 counterValue++
-                if (curentValue[counterValue].type == 'literal') {
+                if (curentValue[counterValue].value == '=') {
                     counterValue++
-                    if (curentValue[counterValue].value == ';') {
+                    if (curentValue[counterValue].type == 'literal') {
                         counterValue++
-                        if (curentValue[counterValue].type == 'identifier') {
+                        if (curentValue[counterValue].value == ';') {
                             counterValue++
-                            if (curentValue[counterValue].type == 'operator') {
+                            if (curentValue[counterValue].type == 'identifier') {
                                 counterValue++
-                                
-                                if (curentValue[counterValue].type == 'identifier' | curentValue[counterValue].type == 'literal') {
+                                if (curentValue[counterValue].type == 'operator') {
                                     counterValue++
-                                    if (curentValue[counterValue].value == ';') {
+
+                                    if (curentValue[counterValue].type == 'identifier' | curentValue[counterValue].type == 'literal') {
                                         counterValue++
-                                        if (curentValue[counterValue].type == 'identifier') {
+                                        if (curentValue[counterValue].value == ';') {
                                             counterValue++
-                                            if (curentValue[counterValue].value == '++') {
+                                            if (curentValue[counterValue].type == 'identifier') {
                                                 counterValue++
-                                                return (true)
-                                                console.log('w loop condition ')
+                                                if (curentValue[counterValue].value == '++') {
+                                                    counterValue++
+                                                    return (true)
+                                                    console.log('w loop condition ')
+
+                                                } else {
+                                                    // return (false)
+
+                                                }
+
 
                                             }
-                                            else {
-                                                // return (false)
-                            
-                                            }
-                                                
-                        
-                                        } 
-                    
-                                    } 
-                
-                                } 
-                
+
+                                        }
+
+                                    }
+
+                                }
+
+
                             }
-                
-                
                         }
                     }
+
                 }
 
-            }
-       
-       
-        }
 
-    }
+            }
+
+        }
     }
 
     //************************************************   end  condition check  for loop  *********************************** */
@@ -804,13 +800,14 @@ class Syntax extends Component {
 
 
     render() {
-        
+
         this.int(this.state.token)
         // alert('syntax')
         // console.log()
         return ( < div >
 
-            </div>
+            <
+            /div>
         )
     }
 
