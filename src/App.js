@@ -35,19 +35,19 @@ class App extends Component {
    
 //    `
     let testInput = `  
-    adad  a = 4545 ; 
-    nuqta  g = 45450.5 ; 
-    agar ( a >= v ) {
+    adad  a =  4545 ; 
+    nuqta   g =  45450.5 ; 
+    agar  ( a >= v ) {
       adad  g = 45450 ; 
     }
     warnaTo {
       adad  g = 45450 ; 
 }
-    warna {
+    warna ohi {
             adad  g = 45450 ; 
     }
     do {
-      adad  g = 45450 ; =  
+      adad  934y  g = 45450 ; =  
     } wloop (  a >= v )
     wloop ( a >= f  ) {
       adad  g = 45450 ; 
