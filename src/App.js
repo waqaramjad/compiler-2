@@ -43,12 +43,13 @@ class App extends Component {
             adad  g = 45450 ; 
     }
     do {
-      adad    g = 45450 ; =  
+      adad   g = 45450 ; =  
     } wloop (  a >= v )
     wloop ( a >= f  ) {
       adad  g = 45450 ; 
     }
 
+    
     func myfunc ( lahore  ) {
       adad  g = 4545.0 ; 
     }
@@ -59,10 +60,10 @@ class App extends Component {
 
     let splitted = testInput.split("\n")
 
-    // console.log(splitted)
+    // //console.log(splitted)
     const map0 = splitted.map((a) => {
       var index = a.search('//')
-      // console.log(index+'foot')
+      // //console.log(index+'foot')
       if (index != 0&& index!=-1) {
         var slicePart = a.slice(0, index)
       }
@@ -72,9 +73,9 @@ class App extends Component {
     
       return (slicePart)
     });
-    // console.log(map0)
+    // //console.log(map0)
 
-    // console.log(map0)
+    // //console.log(map0)
     function cleanArray(actual) {
       var newArray = new Array();
       for (var i = 0; i < actual.length; i++)  {
@@ -89,16 +90,16 @@ class App extends Component {
   var  check2 = check1.filter(function(str) {
        return /\S/.test(str);
    });
-// console.log(check1)
-// console.log(check2)
+// //console.log(check1)
+// //console.log(check2)
    
     const map1 = check2.map((a) => {
       return (a.split(' ').remove(''))
     });
-    // console.log(map1)
+    // //console.log(map1)
 
     var result =  map1.filter(e => e.length);
-    console.log(result);
+    //console.log(result);
     return ( <div className = "App" >
       < Token value = {
         result

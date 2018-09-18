@@ -39,6 +39,8 @@ function matrix(rows, cols, defaultValue) {
     return arr;
 }
 
+
+var check ; 
 class Token extends Component {
     constructor(props) {
         super(props);
@@ -65,11 +67,11 @@ class Token extends Component {
     tokenization() {
         
         let stringInArrayForm = this.props.value
-        // // console.log(stringInArrayForm)
+        // // //console.log(stringInArrayForm)
         var FinatArrayOfTokens = matrix(stringInArrayForm.length)
-        // console.log(FinatArrayOfTokens)
+        // //console.log(FinatArrayOfTokens)
         // var FinatArrayOfTokens = [[]]
-// console.log(FinatArrayOfTokens)
+// //console.log(FinatArrayOfTokens)
         var result = stringInArrayForm.map((line, lineIndex) => {
             var tokenResultOfEachLine = line.map((lineValue, lineValueIndex) => {
                 var resultForWords = this.checkForKeyWord(lineValue)
@@ -81,18 +83,20 @@ class Token extends Component {
                     FinatArrayOfTokens[lineIndex] = newArray
 
                 } else if (resultForWords.value == false) {
-                    alert(++lineValue + ' is not  a valid word line no ' + ++lineIndex)
+                    // alert(++lineValue + ' is not  a valid word line no ' + ++lineIndex)
+                    throw(lineValue + ' is not  a valid word line no ' + ++lineIndex)
+
                 }
                 
             })
             
         })
         myObjectForSyntax = FinatArrayOfTokens
-        // console.log(FinatArrayOfTokens)
+        // //console.log(FinatArrayOfTokens)
         this.setState({
             Array : FinatArrayOfTokens
         })
-        // console.log(this.state.Array)
+        // //console.log(this.state.Array)
 
 
 
@@ -173,7 +177,7 @@ checkForValuesAndIdentifier(myValue){
     
 }
 else{
-    // console.log('true')
+    // //console.log('true')
     return ({
         value: true,
         type: 'identifier'
@@ -200,6 +204,7 @@ else{
 }
 
     render() {
+        console.log(myObjectForSyntax)
         return ( <div>
              <Syntax token={myObjectForSyntax}/>
             </div>
