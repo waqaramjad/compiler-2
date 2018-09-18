@@ -37,9 +37,7 @@ class App extends Component {
     let testInput = `  
     adad  a = 4545 ; 
     nuqta  g = 45450.5 ; 
-
     agar ( a >= v ) {
-
       adad  g = 45450 ; 
     }
     warnaTo {
@@ -48,29 +46,18 @@ class App extends Component {
     warna {
             adad  g = 45450 ; 
     }
-
     do {
-      adad  g = 45450 ; 
+      adad  g = 45450 ; =  
     } wloop (  a >= v )
-
     wloop ( a >= f  ) {
       adad  g = 45450 ; 
     }
-
     func myfunc ( lahore  ) {
       adad  g = 45450 ; 
     }
-
-    loop ( adad a = 5 ; a > 5 ; i ++ ) {
-
-      adad  g = 45450 ; 
-
-      
-    }
     
    
-    
-
+    .
    `
 
     let splitted = testInput.split("\n")
@@ -115,16 +102,13 @@ class App extends Component {
 
     var result =  map1.filter(e => e.length);
     console.log(result);
-    return ( <div className = "App" style={{backgroundColor:"green"}} >
+    return ( <div className = "App" >
       < Token value = {
         result
       }
-    
-      /> 
-      <h1>compiler </h1>
-      
-      
-      </div>
+      /> {
+     
+      } </div>
     );
   }
 }

@@ -21,14 +21,13 @@ class Syntax extends Component {
 
 
     int(token) {
-        console.log(this.props.token)
-        console.log(verify)
-        console.log(lineNo)
 
         counterValue = 0;
         console.log(token)
         console.log('line no ' + lineNo)
         var curentValue = token[lineNo]
+        // console.log(curentValue)
+        // console.log(curentValue[counterValue])
         if (curentValue[counterValue].type == 'keyWord' && curentValue[counterValue].value == 'adad') {
             counterValue++
             // verify++
@@ -47,7 +46,7 @@ class Syntax extends Component {
                         console.log('done')
                         if (curentValue[counterValue].type == 'separator' && curentValue[counterValue].value == ';') {
 
-                            if (curentValue.length == 6) {
+                            if (curentValue.length >=6) {
                                 lineNo++;
                                 verify++
                                 counterValue = 0;
@@ -183,7 +182,7 @@ class Syntax extends Component {
                 //  console.log(curentValue)
                 if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
                     counterValue++
-                    // this.check(curentValue)
+// this.check(curentValue)
                     if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator')
                         lineNo++;
                     var curentValue = token[lineNo]
@@ -214,7 +213,7 @@ class Syntax extends Component {
 
 
                                 lineNo++
-                                console.log('if statement done ' + lineNo)
+                                console.log('if statement done '+lineNo)
                                 this.int(this.state.token)
 
                             }
@@ -227,51 +226,54 @@ class Syntax extends Component {
 
 
             }
-        } else if (curentValue[counterValue].value == 'warna' && curentValue[counterValue].type == 'keyWord') {
-            console.log('warna ')
-
-            counterValue++
-
-            if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator') {
-                lineNo++;
-                var curentValue = token[lineNo]
-                counterValue = 0
-                console.log('inside else ' + lineNo + 'counter' + counterValue)
-                if (curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta') {
-                    var newArrayForChecking = curentValue.push({
-                        check: 'true '
-                    })
-                    console.log('adad seting ')
-                    console.log(curentValue)
-
-                    var checkForDecleration = this.int(this.state.token)
-                    console.log(checkForDecleration)
-
-                    if (checkForDecleration.myVal == true) {
-                        // lineNo++
-                        counterValue = 0
-                        var curentValue = token[lineNo]
-                        console.log('if statement done ')
-                        console.log(lineNo)
-                        console.log(token[lineNo])
-
-                        if (curentValue[counterValue].value == '}') {
+        }
 
 
-                            lineNo++
-                            console.log('else  statement done ' + lineNo)
-                            this.int(this.state.token)
+        else if (curentValue[counterValue].value == 'warna' && curentValue[counterValue].type == 'keyWord') {
+console.log('warna ')
 
-                        }
+counterValue++
 
-                    }
+if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator') {
+    lineNo++;
+    var curentValue = token[lineNo]
+    counterValue = 0
+console.log('inside else '+lineNo+'counter'+counterValue)
+    if (curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta') {
+        var newArrayForChecking = curentValue.push({
+            check: 'true '
+        })
+        console.log('adad seting ')
+        console.log(curentValue)
 
-                }
+        var checkForDecleration = this.int(this.state.token)
+        console.log(checkForDecleration)
+
+        if (checkForDecleration.myVal == true) {
+            // lineNo++
+            counterValue = 0
+            var curentValue = token[lineNo]
+            console.log('if statement done ')
+            console.log(lineNo)
+            console.log(token[lineNo])
+
+            if (curentValue[counterValue].value == '}') {
 
 
-
+                lineNo++
+                console.log('else  statement done '+lineNo)
+                this.int(this.state.token)
 
             }
+
+        }
+
+    }
+
+   
+
+
+}
 
         }
 
@@ -279,14 +281,188 @@ class Syntax extends Component {
         // warna to 
         else if (curentValue[counterValue].value == 'warnaTo' && curentValue[counterValue].type == 'keyWord') {
             console.log('warna ')
-
+            
             counterValue++
-
+            
             if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator') {
                 lineNo++;
                 var curentValue = token[lineNo]
                 counterValue = 0
-                console.log('inside else ' + lineNo + 'counter' + counterValue)
+            console.log('inside else '+lineNo+'counter'+counterValue)
+                if (curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta') {
+                    var newArrayForChecking = curentValue.push({
+                        check: 'true '
+                    })
+                    console.log('adad seting ')
+                    console.log(curentValue)
+            
+                    var checkForDecleration = this.int(this.state.token)
+                    console.log(checkForDecleration)
+            
+                    if (checkForDecleration.myVal == true) {
+                        // lineNo++
+                        counterValue = 0
+                        var curentValue = token[lineNo]
+                        console.log('if statement done ')
+                        console.log(lineNo)
+                        console.log(token[lineNo])
+            
+                        if (curentValue[counterValue].value == '}') {
+            
+            
+                            lineNo++
+                            console.log('warna to  statement done '+lineNo)
+                            this.int(this.state.token)
+            
+                        }
+            
+                    }
+            
+                }
+            
+            
+            }
+            
+                    }
+                    else {
+
+                        this.doWhileLoop(token)
+                    }
+
+    }
+
+    doWhileLoop(token){
+
+// console.log(token)
+
+var curentValue = token[lineNo]
+counterValue = 0;
+console.log(curentValue)
+// console.log(lineNo)
+// console.log(curentValue[counterValue])
+
+if (curentValue[counterValue].value == 'do' && curentValue[counterValue].type == 'keyWord') {
+    counterValue++
+    console.log('2nd phase ')
+if (curentValue[counterValue].value == '{' ) {
+    lineNo++;
+    var curentValue = token[lineNo]
+    counterValue = 0
+
+
+    console.log('inside')
+
+    if (curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta') {
+        var newArrayForChecking = curentValue.push({
+            check: 'true '
+        })
+        console.log('adad seting ')
+        console.log(curentValue)
+
+        var checkForDecleration = this.int(this.state.token)
+        console.log(checkForDecleration)
+        // console.log(checkForDecleration)
+
+        if (checkForDecleration.myVal == true) {
+            // lineNo++
+            counterValue = 0
+            var curentValue = token[lineNo]
+            console.log('do while loop  statement done ')
+            console.log(lineNo)
+            console.log(token[lineNo])
+
+            if (curentValue[counterValue].value == '}') {
+
+                counterValue++
+                // lineNo++
+                // counterValue=0
+                console.log('do while  done '+lineNo)
+                // this.int(this.state.token)
+                
+
+                ///*********************** */
+             
+             
+             
+        if (curentValue[counterValue].value == 'wloop' && curentValue[counterValue].type == 'keyWord') {
+            counterValue++
+
+            if (curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator') {
+
+                console.log('inside if in condition')
+                counterValue++
+                var conditionResult = this.conditionCheck(this.state.token)
+
+                if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
+
+                    lineNo++
+                    console.log('do while loop end ')
+                    this.int(this.state.token)
+
+        
+                }
+             
+            }
+        }
+             
+             
+             
+             
+                ///*********************** */
+            }
+
+
+
+        }
+
+    }
+
+
+}
+
+
+    }
+
+    else{
+console.log('else do whie ')
+        this.wLoop(token)
+
+
+    }
+
+}
+
+
+wLoop(token){
+
+    // console.log(token)
+    
+    var curentValue = token[lineNo]
+    counterValue = 0;
+    console.log('curentValue')
+    if (curentValue[counterValue].value == 'wloop' && curentValue[counterValue].type == 'keyWord') {
+        counterValue++
+
+        if (curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator') {
+
+            console.log('inside wLoop ')
+            counterValue++
+            var conditionResult = this.conditionCheck(this.state.token)
+            //  console.log(conditionResult)
+            //  console.log(counterValue)
+            //  console.log(curentValue)
+            if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
+                counterValue++
+                console.log(curentValue)
+// this.check(curentValue)
+                if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator'){
+                    lineNo++;
+                var curentValue = token[lineNo]
+                counterValue = 0
+
+
+                console.log('inside ')
+
                 if (curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta') {
                     var newArrayForChecking = curentValue.push({
                         check: 'true '
@@ -301,7 +477,7 @@ class Syntax extends Component {
                         // lineNo++
                         counterValue = 0
                         var curentValue = token[lineNo]
-                        console.log('if statement done ')
+                        console.log('wloop statement done ')
                         console.log(lineNo)
                         console.log(token[lineNo])
 
@@ -309,7 +485,7 @@ class Syntax extends Component {
 
 
                             lineNo++
-                            console.log('warna to  statement done ' + lineNo)
+                            console.log('if statement done '+lineNo)
                             this.int(this.state.token)
 
                         }
@@ -318,42 +494,66 @@ class Syntax extends Component {
 
                 }
 
-
             }
 
-        } else {
-
-            this.doWhileLoop(token)
         }
-
+        }
+    }
+    else{
+        this.fuctionLogic(token)
+        console.log(lineNo)
     }
 
-    doWhileLoop(token) {
 
-        // console.log(token)
 
-        var curentValue = token[lineNo]
-        counterValue = 0;
-        console.log(curentValue)
-        // console.log(lineNo)
-        // console.log(curentValue[counterValue])
+}
 
-        if (curentValue[counterValue].value == 'do' && curentValue[counterValue].type == 'keyWord') {
+//**************************************   Function ***************************** */
+
+fuctionLogic(token){
+
+    // var curentValue = token
+    var curentValue = token[lineNo]
+// 
+    counterValue = 0;
+    console.log(token)
+    if (curentValue[counterValue].value == 'func' && curentValue[counterValue].type == 'keyWord') {
+        counterValue++
+        console.log('round bracket ) ')
+        if (curentValue[counterValue].type == 'identifier') {
+
+            console.log('round bracket ) ')
             counterValue++
-            console.log('2nd phase ')
-            if (curentValue[counterValue].value == '{') {
-                lineNo++;
+
+        if (curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator') {
+            console.log('round bracket ) ')
+
+            counterValue++
+            var conditionResult = this.ParameterCheck(curentValue)
+            //  console.log(conditionResult)
+            //  console.log(counterValue)
+            console.log('round bracket ) ')
+            console.log(conditionResult)
+            console.log(curentValue)
+            console.log(curentValue[counterValue].value)
+            if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
+                counterValue++
+                
+                 console.log('round bracket ) ')
+                 if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator'){
+                    lineNo++;
                 var curentValue = token[lineNo]
                 counterValue = 0
 
 
-                console.log('inside')
+                console.log(token)
+                console.log(counterValue)
 
                 if (curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta') {
                     var newArrayForChecking = curentValue.push({
                         check: 'true '
                     })
-                    console.log('adad seting ')
+                    console.log('func ')
                     console.log(curentValue)
 
                     var checkForDecleration = this.int(this.state.token)
@@ -363,406 +563,79 @@ class Syntax extends Component {
                         // lineNo++
                         counterValue = 0
                         var curentValue = token[lineNo]
-                        console.log('do while loop  statement done ')
+                        console.log('mid of function ')
                         console.log(lineNo)
                         console.log(token[lineNo])
 
                         if (curentValue[counterValue].value == '}') {
 
-                            counterValue++
-                            // lineNo++
-                            // counterValue=0
-                            console.log('do while  done ' + lineNo)
-                            // this.int(this.state.token)
 
-
-                            ///*********************** */
-
-
-
-                            if (curentValue[counterValue].value == 'wloop' && curentValue[counterValue].type == 'keyWord') {
-                                counterValue++
-
-                                if (curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator') {
-
-                                    console.log('inside if in condition')
-                                    counterValue++
-                                    var conditionResult = this.conditionCheck(this.state.token)
-
-                                    if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
-
-                                        lineNo++
-                                        console.log('do while loop end ')
-                                        this.int(this.state.token)
-
-
-                                    }
-
-                                }
-                            }
-
-
-
-
-                        }
-
-
-
-                    }
-
-                }
-
-
-            }
-
-
-        } else {
-            console.log('else do whie ')
-            this.wLoop(token)
-
-
-        }
-
-    }
-
-
-    wLoop(token) {
-
-        // console.log(token)
-
-        var curentValue = token[lineNo]
-        counterValue = 0;
-        console.log('curentValue')
-        if (curentValue[counterValue].value == 'wloop' && curentValue[counterValue].type == 'keyWord') {
-            counterValue++
-
-            if (curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator') {
-
-                console.log('inside wLoop ')
-                counterValue++
-                var conditionResult = this.conditionCheck(this.state.token)
-                //  console.log(conditionResult)
-                //  console.log(counterValue)
-                //  console.log(curentValue)
-                if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
-                    counterValue++
-                    console.log(curentValue)
-                    // this.check(curentValue)
-                    if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator') {
-                        lineNo++;
-                        var curentValue = token[lineNo]
-                        counterValue = 0
-
-
-                        console.log('inside ')
-
-                        if (curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta') {
-                            var newArrayForChecking = curentValue.push({
-                                check: 'true '
-                            })
-                            console.log('adad seting ')
-                            console.log(curentValue)
-
-                            var checkForDecleration = this.int(this.state.token)
-                            console.log(checkForDecleration)
-
-                            if (checkForDecleration.myVal == true) {
-                                // lineNo++
-                                counterValue = 0
-                                var curentValue = token[lineNo]
-                                console.log('wloop statement done ')
-                                console.log(lineNo)
-                                console.log(token[lineNo])
-
-                                if (curentValue[counterValue].value == '}') {
-
-
-                                    lineNo++
-                                    console.log('if statement done ' + lineNo)
-                                    this.int(this.state.token)
-
-                                }
-
-                            }
+                            lineNo++
+                            console.log('end of function '+lineNo)
+                            this.int(this.state.token)
 
                         }
 
                     }
 
                 }
-            }
-        } else {
-            this.fuctionLogic(token)
-            console.log(lineNo)
-        }
-
-
-
-    }
-
-    //**************************************   Function ***************************** */
-
-    fuctionLogic(token) {
-
-        // var curentValue = token
-        var curentValue = token[lineNo]
-        // 
-        counterValue = 0;
-        console.log(token)
-        if (curentValue[counterValue].value == 'func' && curentValue[counterValue].type == 'keyWord') {
-            counterValue++
-            console.log('round bracket ) ')
-            if (curentValue[counterValue].type == 'identifier') {
-
-                console.log('round bracket ) ')
-                counterValue++
-
-                if (curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator') {
-                    console.log('round bracket ) ')
-
-                    counterValue++
-                    var conditionResult = this.ParameterCheck(curentValue)
-                    //  console.log(conditionResult)
-                    //  console.log(counterValue)
-                    console.log('round bracket ) ')
-                    console.log(conditionResult)
-                    console.log(curentValue)
-                    console.log(curentValue[counterValue].value)
-                    if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
-                        counterValue++
-
-                        console.log('round bracket ) ')
-                        if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator') {
-                            lineNo++;
-                            var curentValue = token[lineNo]
-                            counterValue = 0
-
-
-                            console.log(token)
-                            console.log(counterValue)
-
-                            if (curentValue[counterValue].value == 'adad' | curentValue[counterValue].value == 'nuqta') {
-                                var newArrayForChecking = curentValue.push({
-                                    check: 'true '
-                                })
-                                console.log('func ')
-                                console.log(curentValue)
-
-                                var checkForDecleration = this.int(this.state.token)
-                                console.log(checkForDecleration)
-
-                                if (checkForDecleration.myVal == true) {
-                                    // lineNo++
-                                    counterValue = 0
-                                    var curentValue = token[lineNo]
-                                    console.log('mid of function ')
-                                    console.log(lineNo)
-                                    console.log(token[lineNo])
-
-                                    if (curentValue[counterValue].value == '}') {
-
-
-                                        lineNo++
-                                        console.log('end of function ' + lineNo)
-                                        this.int(this.state.token)
-
-                                    }
-
-                                }
-
-                            }
-
-                        }
-
-                    }
-                }
 
             }
 
-        } else {
-            // this.forLoopLogic(token)
-            console.log('function else  ')
+            }
         }
 
     }
-    //************************************************End *********************************** */
-    //************************************************Parameter Check  *********************************** */
+           
+}
+        
+}
+//************************************************End *********************************** */
+//************************************************Parameter Check  *********************************** */
 
-    ParameterCheck(curentValue) {
-        console.log(curentValue[counterValue])
-        console.log(curentValue[counterValue])
+ParameterCheck(curentValue){
+console.log(curentValue[counterValue])
+console.log(curentValue[counterValue])
 
-        if (curentValue[counterValue].type == 'identifier') {
-            counterValue++
+    if ( curentValue[counterValue].type == 'identifier') {
+        counterValue++
             // if(curentValue[counterValue].value == ',' && curentValue[counterValue].type =='separator'){
             //     counterValue++
             //     this.ParameterCheck(curentValue)
             // }
-
+            
             // else{
             //     console.log('else')
             //     return true
-
+                
             // }
             return true
-        } else {
+        }
+        else{
             console.log('else')
             return false
 
         }
 
 
-    }
+} 
 
 
 
-    //************************************************End Parameter Check  *********************************** */
-    //************************************************   start for loop  *********************************** */
+//************************************************End Parameter Check  *********************************** */
+check(current){
 
-    forLoopLogic(token) {
-
-        var curentValue = token[lineNo]
-        counterValue = 0;
-        console.log('curentValue')
-        if (curentValue[counterValue].value == 'loop' && curentValue[counterValue].type == 'keyWord') {
-            counterValue++
-
-            if (curentValue[counterValue].value == '(' && curentValue[counterValue].type == 'separator') {
-
-                console.log('inside wLoop ')
-                counterValue++
-                var conditionResult = this.conditionCheckForLoop(this.state.token)
-                console.log(conditionResult)
-                //  console.log(counterValue)
-                //  console.log(curentValue)
-                if (conditionResult == true && curentValue[counterValue].value == ')' && curentValue[counterValue].type == 'separator') {
-                    counterValue++
-                    console.log(curentValue)
-                    // this.check(curentValue)
-                    if (curentValue[counterValue].value == '{' && curentValue[counterValue].type == 'separator') {
-                        lineNo++;
-                        var curentValue = token[lineNo]
-                        counterValue = 0
+console.log( current[counterValue])
+if(current[counterValue].value=='{')
+{
+    return true 
+}
+else if (this.state.token[++lineNo][0].value=="{")
+{
 
 
-                        console.log('inside ')
-
-                        if (curentValue[counterValue].value == 'adad1' | curentValue[counterValue].value == 'nuqta1') {
-                            var newArrayForChecking = curentValue.push({
-                                check: 'true '
-                            })
-                            console.log('adad seting ')
-                            console.log(curentValue)
-
-                            var checkForDecleration = this.int(this.state.token)
-                            console.log(checkForDecleration)
-
-                            if (checkForDecleration.myVal == true) {
-                                // lineNo++
-                                counterValue = 0
-                                var curentValue = token[lineNo]
-                                console.log('wloop statement done ')
-                                console.log(lineNo)
-                                console.log(token[lineNo])
-
-                                if (curentValue[counterValue].value == '}') {
-
-
-                                    lineNo++
-                                    console.log('fo ' + lineNo)
-                                    this.int(this.state.token)
-
-                                }
-
-                            }
-
-                        }
-
-                    }
-
-                }
-            }
-        } else {
-            this.fuctionLogic(token)
-            console.log('inside else ')
-        }
-
-
-
-    }
-    //************************************************   END for loop  *********************************** */
-    //************************************************   condition check  for loop  *********************************** */
-
-    conditionCheckForLoop(token) {
-        var curentValue = token[lineNo]
-        console.log(curentValue)
-        console.log(curentValue[counterValue].type)
-        if (curentValue[counterValue].type == 'keyWord') {
-            console.log('w loop condition ')
-            counterValue++
-            if (curentValue[counterValue].type == 'identifier') {
-                console.log('w loop condition ')
-                counterValue++
-                if (curentValue[counterValue].value == '=') {
-                    counterValue++
-                    if (curentValue[counterValue].type == 'literal') {
-                        counterValue++
-                        if (curentValue[counterValue].value == ';') {
-                            counterValue++
-                            if (curentValue[counterValue].type == 'identifier') {
-                                counterValue++
-                                if (curentValue[counterValue].type == 'operator') {
-                                    counterValue++
-
-                                    if (curentValue[counterValue].type == 'identifier' | curentValue[counterValue].type == 'literal') {
-                                        counterValue++
-                                        if (curentValue[counterValue].value == ';') {
-                                            counterValue++
-                                            if (curentValue[counterValue].type == 'identifier') {
-                                                counterValue++
-                                                if (curentValue[counterValue].value == '++') {
-                                                    counterValue++
-                                                    return (true)
-                                                    console.log('w loop condition ')
-
-                                                } else {
-                                                    // return (false)
-
-                                                }
-
-
-                                            }
-
-                                        }
-
-                                    }
-
-                                }
-
-
-                            }
-                        }
-                    }
-
-                }
-
-
-            }
-
-        }
-    }
-
-    //************************************************   end  condition check  for loop  *********************************** */
-    check(current) {
-
-        console.log(current[counterValue])
-        if (current[counterValue].value == '{') {
-            return true
-        } else if (this.state.token[++lineNo][0].value == "{") {
-
-
-        }
-    }
+}
+}
 
 
     conditionCheck(token) {
@@ -800,14 +673,12 @@ class Syntax extends Component {
 
 
     render() {
-
         this.int(this.state.token)
         // alert('syntax')
         // console.log()
         return ( < div >
 
-            <
-            /div>
+            </div>
         )
     }
 
