@@ -114,13 +114,16 @@ class App extends Component {
 
     var result =  map1.filter(e => e.length);
     console.log(result);
-    return ( <div className = "App" >
+    return ( <div className = "App" style={{backgroundColor:"green"}} >
       < Token value = {
         result
       }
-      /> {
-     
-      } </div>
+    
+      /> 
+      <h1>compiler </h1>
+      
+      
+      </div>
     );
   }
 }

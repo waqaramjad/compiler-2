@@ -806,8 +806,7 @@ class Syntax extends Component {
         // console.log()
         return ( < div >
 
-            <
-            /div>
+            </div>
         )
     }
 
