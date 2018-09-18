@@ -21,6 +21,9 @@ class Syntax extends Component {
 
 
     int(token) {
+        console.log(this.props.token)
+        console.log(verify)
+        console.log(lineNo)
 
         counterValue = 0;
         console.log(token)
@@ -580,7 +583,7 @@ class Syntax extends Component {
 
         }
         else {
-            this.forLoopLogic(token)
+            // this.forLoopLogic(token)
             console.log('function else  ')
         }
 
@@ -801,6 +804,7 @@ class Syntax extends Component {
 
 
     render() {
+        
         this.int(this.state.token)
         // alert('syntax')
         // console.log()
