@@ -81,7 +81,7 @@ class Token extends Component {
                     FinatArrayOfTokens[lineIndex] = newArray
 
                 } else if (resultForWords.value == false) {
-                    alert(lineValue + ' is not  a word at line no ' + lineIndex)
+                    alert(++lineValue + ' is not  a valid word line no ' + ++lineIndex)
                 }
                 
             })

@@ -6,10 +6,6 @@ import Token from './Token.js'
 
 class App extends Component {
 
-
-
-
-
   render() {
     Array.prototype.remove = function () {
       var what, a = arguments,
@@ -35,29 +31,30 @@ class App extends Component {
    
 //    `
     let testInput = `  
-    adad  a =  4545 ; 
-    nuqta   g =  45450.5 ; 
-    agar  ( a >= v ) {
+    adad  a  =  4545 ; 
+    nuqta  g =  757675645450.5 ; 
+    agar  ( a >= vq ) {
       adad  g = 45450 ; 
     }
     warnaTo {
       adad  g = 45450 ; 
 }
-    warna ohi {
+    warna  {
             adad  g = 45450 ; 
     }
     do {
-      adad  934y  g = 45450 ; =  
+      adad    g = 45450 ; =  
     } wloop (  a >= v )
     wloop ( a >= f  ) {
       adad  g = 45450 ; 
     }
+
     func myfunc ( lahore  ) {
-      adad  g = 45450 ; 
+      adad  g = 4545.0 ; 
     }
     
    
-    .
+    
    `
 
     let splitted = testInput.split("\n")

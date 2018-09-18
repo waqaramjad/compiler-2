@@ -28,6 +28,7 @@ class Syntax extends Component {
         var curentValue = token[lineNo]
         // console.log(curentValue)
         // console.log(curentValue[counterValue])
+        if(token.length != lineNo){
         if (curentValue[counterValue].type == 'keyWord' && curentValue[counterValue].value == 'adad') {
             counterValue++
             // verify++
@@ -83,12 +84,25 @@ class Syntax extends Component {
             }
 
 
-        } else {
+        } else if (token.length == lineNo){
+
+            console.log('Programe run successfully')
+        }
+        
+        
+        else {
 
             var FloatReturn = this.float(this.state.token)
             return (FloatReturn)
             console.log(FloatReturn)
         }
+    }
+    else {
+
+        console.log('Programe run successfully')
+    }
+
+
     }
 
     float(token) {
@@ -284,7 +298,7 @@ class Syntax extends Component {
                     }
 
                 } else {
-                    throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                    throw ('error at li ne no ' + ++lineNo + ' and token no ' + ++counterValue)
                 }
 
 
@@ -660,6 +674,10 @@ class Syntax extends Component {
             else {
                 throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
             }
+
+        }
+        else{
+            throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
 
         }
 
