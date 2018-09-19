@@ -3,10 +3,40 @@ import React, {
 } from 'react';
 import './App.css';
 import Token from './Token.js'
+import Button from '@material-ui/core/Button';
+var testInput;
+var result 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.sendingFunction = this.sendingFunction.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {temperature: ''};
+  }
+  sendingFunction =()=>{
+    console.log('check')
+return(
+
+  < Token value = {
+        result
+      }
+      />
+)
+
+  }
+
+   handleChange(e) {
+      // this.setState({temperature: e.target.value});
+      testInput = e.target.value
+      console.log(testInput)
+
+    }
+
 
   render() {
+function completeProcess(){
+
     Array.prototype.remove = function () {
       var what, a = arguments,
         L = a.length,
@@ -30,7 +60,7 @@ class App extends Component {
 //     } ; //
    
 //    `
-    let testInput = `  
+     testInput = `  
     adad  a  =  4545 ; 
     nuqta  g =  757675645450.5 ; 
     agar  ( a >= vq ) {
@@ -53,7 +83,7 @@ class App extends Component {
     func myfunc ( lahore  ) {
       adad  g = 4545.0 ; 
     }
-    
+ 
    
     
    `
@@ -76,6 +106,7 @@ class App extends Component {
     // //console.log(map0)
 
     // //console.log(map0)
+   
     function cleanArray(actual) {
       var newArray = new Array();
       for (var i = 0; i < actual.length; i++)  {
@@ -98,15 +129,34 @@ class App extends Component {
     });
     // //console.log(map1)
 
-    var result =  map1.filter(e => e.length);
+     result =  map1.filter(e => e.length);
+
+  }
+   
     //console.log(result);
     return ( <div className = "App" >
-      < Token value = {
+
+   
+
+
+    
+      {/* < Token value = {
         result
       }
-      /> {
+      /> { */}
      
-      } </div>
+      } 
+      <textarea  style={{ height: 200 , width : 400 , marginTop:20}}  onChange={this.handleChange}>
+  Hello there, this is some text in a text area
+</textarea>
+{/* <Br/> */}
+
+<br />
+<Button variant="contained" color="primary" onClick={this.sendingFunction} >
+        Primary 
+      </Button>
+      
+      </div>
     );
   }
 }
