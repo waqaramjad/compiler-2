@@ -182,7 +182,7 @@ return(
 
       {console.log('handleChange')}
       <textarea  style={{ height: 200 , width : 400 , marginTop:20}}  onChange={this.handleChange}>
-  Hello there, this is some text in a text area
+  adad a = 654 ; 
 </textarea>
 {/* <Br/> */}
 

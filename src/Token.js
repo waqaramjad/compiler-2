@@ -9,6 +9,9 @@ const separator = 2;
 const operator = 3;
 const literal = 4;
 
+
+var tempValueForLi = ''
+var tempValueForkeyword = ''
 function Create2DArray(rows) {
     var arr = [];
 
@@ -206,6 +209,38 @@ else{
     render() {
         console.log(myObjectForSyntax)
         return ( <div>
+
+            <ol>
+               {
+
+myObjectForSyntax.map((line, lineIndex)=>{
+tempValueForLi = ''
+tempValueForkeyword = ''
+
+
+line.map((lineValue, lineValueIndex) => {
+
+     tempValueForLi =  tempValueForLi.concat(lineValue.value + "  ("+lineValue.type+") "+"  ")
+    //  tempValueForkeyword =  tempValueForkeyword.concat(lineValue.type+") "+"  ")
+console.log(tempValueForLi)
+console.log(lineValue)
+    })
+    console.log(tempValueForLi)
+
+    if(tempValueForLi!= ''){
+        return(
+            <div>
+                <li style={{backgroundColor:'skyblue'}}>{tempValueForLi}</li>
+                <br />
+
+            </div>
+            
+        )
+    }
+})
+
+               }
+            </ol>
              <Syntax token={myObjectForSyntax}/>
             </div>
         )
