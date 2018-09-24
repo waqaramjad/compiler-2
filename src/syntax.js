@@ -93,6 +93,8 @@ class Syntax extends Component {
         } else if (token.length == lineNo){
 // modelVar++
             // console.log('Programe run successfully')
+            modelVar++
+            if(modelVar == 1)
             alert('Programe run successfully')
         }
         
@@ -107,6 +109,11 @@ class Syntax extends Component {
     else {
 
         console.log('Programe run successfully')
+        modelVar++
+        if(modelVar == 1)
+
+        alert('Programe run successfully')
+
     }
 
 
