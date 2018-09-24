@@ -4,7 +4,7 @@ import React, {
 import './App.css';
 import Token from './Token.js'
 import Button from '@material-ui/core/Button';
-var testInput;
+var testInput = '';
 var result = 0
 
 class App extends Component {
@@ -154,15 +154,14 @@ this.setState({
     return ( <div className = "App" >
 
    
-{result != 0 ? < Token value = {  result}/>: null }
-
+<h2>Compiler </h2>
     
       {/* < Token value = {
         result
       }
       /> { */}
      
-      } 
+      
 
       {/* {
 
@@ -181,15 +180,17 @@ return(
       } */}
 
       {console.log('handleChange')}
-      <textarea  style={{ height: 200 , width : 400 , marginTop:20}}  onChange={this.handleChange}>
-  adad a = 654 ; 
+      <textarea  style={{ height: 200 , width : 400 , marginTop:20}}  onChange={this.handleChange} placeHolder="enter some text here ">
+  
 </textarea>
 {/* <Br/> */}
 
 <br />
-<Button variant="contained" color="primary" onClick={this.completeProcess} >
-        Primary 
+<Button variant="contained" color="primary" onClick={testInput != "" ? this.completeProcess:null} >
+        Compile 
       </Button>
+      {result != 0 ? < Token value = {  result}/>: null }
+
       
       </div>
     );
