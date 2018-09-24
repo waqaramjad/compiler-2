@@ -2,7 +2,8 @@ import React, {
     Component
 } from 'react';
 
-
+import Modal from '@material-ui/core/Modal';
+var modelVar = 0 ; 
 var verify = 0
 var lineNo = 0
 var counterValue = 0
@@ -67,26 +68,32 @@ class Syntax extends Component {
 
 
                         } else {
-                            throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                             throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                         }
 
                     } else {
-                        throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                         throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                     }
 
 
                 } else {
-                    throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                    console.log('warning')
+                     throw new Error('error at line no ' + ++lineNo + ' and token no ' + ++counterValue); // ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                    //  throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+
                 }
 
             } else {
-                throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                // alert('hy')
+                console.log('check ')
+                 throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
             }
 
 
         } else if (token.length == lineNo){
-
-            console.log('Programe run successfully')
+// modelVar++
+            // console.log('Programe run successfully')
+            alert('Programe run successfully')
         }
         
         
@@ -154,20 +161,20 @@ class Syntax extends Component {
 
 
                         } else {
-                            throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                             throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                         }
 
                     } else {
-                        throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                         throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                     }
 
 
                 } else {
-                    throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                     throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                 }
 
             } else {
-                throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                 throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
             }
 
 
@@ -236,24 +243,24 @@ class Syntax extends Component {
                                 this.int(this.state.token)
 
                             } else {
-                                throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                                 throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                             }
 
                         } else {
-                            throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                             throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                         }
 
                     } else {
-                        throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                         throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                     }
 
                 } else {
-                    throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                     throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                 }
 
 
             } else {
-                throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                 throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
             }
         } else if (curentValue[counterValue].value == 'warna' && curentValue[counterValue].type == 'keyWord') {
             //console.log('warna ')
@@ -291,22 +298,22 @@ class Syntax extends Component {
                             this.int(this.state.token)
 
                         } else {
-                            throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                             throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                         }
 
                     } else {
-                        throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                         throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                     }
 
                 } else {
-                    throw ('error at li ne no ' + ++lineNo + ' and token no ' + ++counterValue)
+                     throw new Error ('error at li ne no ' + ++lineNo + ' and token no ' + ++counterValue)
                 }
 
 
 
 
             } else {
-                throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                 throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
             }
 
         }
@@ -349,19 +356,19 @@ class Syntax extends Component {
                             this.int(this.state.token)
 
                         } else {
-                            throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                             throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                         }
 
                     } else {
-                        throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                         throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                     }
                 } else {
-                    throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                     throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                 }
 
 
             } else {
-                throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                 throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
             }
 
         } else {
@@ -441,34 +448,34 @@ class Syntax extends Component {
 
 
                                     } else {
-                                        throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                                         throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                                     }
 
                                 } else {
-                                    throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                                     throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                                 }
                             } else {
-                                throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                                 throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                             }
 
 
 
                             ///*********************** */
                         } else {
-                            throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                             throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                         }
 
                     } else {
-                        throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                         throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                     }
 
                 } else {
-                    throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                     throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                 }
 
 
             } else {
-                throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                 throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
             }
 
 
@@ -540,33 +547,33 @@ class Syntax extends Component {
                                 }
 
                                 else {
-                                    throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                                     throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                                 }
                                 
 
                             }
                             else {
-                                throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                                 throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                             }
 
                         }
 
                         else {
-                            throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                             throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                         }
 
                     }
                     else {
-                        throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                         throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                     }
 
                 }
                 else {
-                    throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                     throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                 }
             }
             else {
-                throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                 throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
             }
         } else {
             this.fuctionLogic(token)
@@ -646,40 +653,40 @@ class Syntax extends Component {
 
                                     }
                                     else {
-                                        throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                                         throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                                     }
 
                                 }
                                 else {
-                                    throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                                     throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                                 }
                             }
                             else {
-                                throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                                 throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                             }
 
                         }
                         else {
-                            throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                             throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                         }
 
                     }
                     else {
-                        throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                         throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                     }
                 }
                 else {
-                    throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                     throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
                 }
 
             }
             else {
-                throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+                 throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
             }
 
         }
         else{
-            throw ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
+             throw new Error ('error at line no ' + ++lineNo + ' and token no ' + ++counterValue)
 
         }
 
@@ -761,15 +768,16 @@ class Syntax extends Component {
 
 
 
+    // {modelVar != 0 ? < Token value = {  result}/>: null }
 
     render() {
         this.int(this.state.token)
         // alert('syntax')
         // //console.log()
         return ( < div >
+        <Modal />
 
-            <
-            /div>
+            </div>
         )
     }
 

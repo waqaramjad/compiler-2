@@ -250,4 +250,3 @@ console.log(lineValue)
 
 
 export default Token;
-

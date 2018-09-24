@@ -189,7 +189,7 @@ return(
 <Button variant="contained" color="primary" onClick={testInput != "" ? this.completeProcess:null} >
         Compile 
       </Button>
-      {result != 0 ? < Token value = {  result}/>: null }
+      {/* {result != 0 ? < Token value = {  result}/>: null } */}
 
       
       </div>
